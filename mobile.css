@@ -1,0 +1,153 @@
+/* ---------- RESPONSIVE ---------- */
+@media (min-width:860px) {
+  .nav-links {
+    display: flex;
+    gap: 26px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--navy-soft);
+  }
+
+  .login-link {
+    display: inline-flex;
+  }
+
+  .hamburger {
+    display: none;
+  }
+
+  .hero .container {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+  }
+
+  .hero-copy {
+    flex: 1;
+  }
+
+  .hero-visual-col {
+    flex: 1;
+  }
+
+  .hero h1 {
+    font-size: 48px;
+  }
+
+  .hero-ctas {
+    flex-direction: row;
+  }
+
+  .hero-ctas .btn {
+    width: auto;
+  }
+
+  .hero-flows {
+    flex-direction: row;
+  }
+
+  .hero-flows .flow-card {
+    flex: 1;
+  }
+
+  .stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+
+  .two-way-grid {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .two-way-grid .way-card {
+    flex: 1;
+  }
+
+  .way-checklist {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .two-ways h2 {
+    font-size: 36px;
+  }
+
+  .web-grid {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .browser-card {
+    flex: 1.15;
+  }
+
+  .web-side {
+    flex: 1;
+  }
+
+  .web-collect h2 {
+    font-size: 36px;
+  }
+
+  .feat-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  .feat-section h2 {
+    font-size: 34px;
+  }
+
+  .camp-grid {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .camp-browser {
+    flex: 1.15;
+  }
+
+  .camp-side {
+    flex: 1;
+  }
+
+  .campaigns-section h2 {
+    font-size: 36px;
+  }
+
+  .campaign-cards {
+    flex-direction: row;
+  }
+
+  .campaign-cards .campaign-card {
+    flex: 1;
+  }
+
+  .camp-mgmt h2 {
+    font-size: 34px;
+  }
+
+  .wa-grid {
+    flex-direction: row;
+    align-items: stretch;
+  }
+
+  .seq-card {
+    flex: 1;
+  }
+
+  .phone-card {
+    flex: 1;
+  }
+
+  .wa-section h2 {
+    font-size: 34px;
+  }
+
+  pay-grid{ flex-direction:row; }
+  .pay-left{ flex:1; }
+  .pay-right{ flex:1; }
+  .pay-section h2{ font-size:34px; }
+   .usecase-cols{ flex-direction:row; }
+  .usecase-cols .use-col{ flex:1; }
+  .client-section h2{ font-size:34px; }
+}
