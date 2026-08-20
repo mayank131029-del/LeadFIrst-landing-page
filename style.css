@@ -50,6 +50,7 @@
 
   /* ---------- HEADER ---------- */
   header {
+padding: 0 10%;
     background: #fff;
     border-bottom: 1px solid var(--line);
   }
@@ -4341,4 +4342,1212 @@
 .theme-cyan .agc-bar { background-color: #06B6D4; }
 .theme-cyan .agc-client-info p, 
 .theme-cyan .agc-val { color: #06B6D4; }
+
+
+/* =========================================
+   ANALYTICS SECTION
+========================================= */
+
+.analytics-section {
+  padding: 80px 10%;
+  font-family: var(--ff-head);
+  background-color: var(--white);
+}
+
+.anl-container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.anl-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.anl-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-top: 16px;
+}
+
+.highlight-grad {
+  background: var(--grad);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color: transparent;
+}
+
+/* --- Top Stats Grid --- */
+.anl-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.anl-stat-card {
+  background-color: var(--white);
+  border-radius: var(--radius-md);
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+  transition: transform 0.2s ease;
+}
+
+.anl-stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+}
+
+/* Colored Borders for Cards */
+.border-blue { border: 1px solid #DBEAFE; }
+.border-purple { border: 1px solid #E9D5FF; }
+.border-green { border: 1px solid #D1FAE5; }
+.border-yellow { border: 1px solid #FEF3C7; }
+
+/* Text Colors */
+.text-blue { color: #3B82F6; }
+.text-purple { color: #8B5CF6; }
+.text-green { color: #10B981; }
+.text-yellow { color: #F59E0B; }
+.positive-green { color: #10B981; }
+
+.anl-stat-label {
+  font-size: 13px;
+  font-weight: 600;
+  color: #94A3B8;
+  margin-bottom: 8px;
+}
+
+.anl-stat-value {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.anl-stat-sub {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* --- Charts Grid Setup --- */
+.anl-charts-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr; /* Line chart is twice as wide as Bar chart */
+  gap: 20px;
+}
+
+.anl-chart-card {
+  background-color: #F8F9FE; /* Light tinted background */
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 30px;
+}
+
+.anl-chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.anl-chart-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+/* --- Legend --- */
+.anl-chart-legend {
+  display: flex;
+  gap: 16px;
+}
+
+.legend-item {
+  font-size: 11px;
+  font-weight: 600;
+  color: #94A3B8;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot-blue { background-color: #3B82F6; }
+.dot-purple { background-color: #8B5CF6; }
+
+/* --- Line Chart CSS Layout --- */
+.anl-line-chart-wrapper {
+  position: relative;
+  height: 250px;
+  padding-left: 40px; /* Space for Y axis */
+  padding-bottom: 30px; /* Space for X axis */
+}
+
+/* Y Axis */
+.y-axis {
+  position: absolute;
+  left: 0;
+  top: -6px; /* Aligns visually with the grid lines */
+  bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 500;
+  text-align: right;
+  width: 30px;
+}
+
+/* X Axis */
+.x-axis {
+  position: absolute;
+  left: 40px;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* The Graphic Area */
+.chart-graphic {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.chart-graphic svg {
+  width: 100%;
+  height: 100%;
+  overflow: visible; /* Allows the stroke to bleed slightly without clipping */
+}
+
+.grid-line {
+  stroke: #E2E8F0;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.grid-line.solid {
+  stroke-dasharray: none;
+}
+
+.grid-line-v {
+  stroke: #E2E8F0;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+  opacity: 0.5;
+}
+
+/* --- Bar Chart CSS Layout --- */
+.anl-bar-card .anl-chart-title {
+  margin-bottom: 30px;
+}
+
+.anl-bar-chart-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  justify-content: center;
+  height: 220px;
+}
+
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.bar-label {
+  font-size: 11px;
+  color: #64748B;
+  font-weight: 600;
+  text-align: right;
+  width: 50px;
+  line-height: 1.2;
+}
+
+.bar-track {
+  flex: 1;
+  height: 32px;
+  border-radius: 6px;
+}
+
+.bar-fill {
+  height: 100%;
+  border-radius: 6px;
+}
+
+.grad-bg {
+  background: var(--grad);
+}
+
+
+/* =========================================
+   DASHBOARD SECTION
+========================================= */
+
+.dashboard-section {
+  padding: 80px 10%;
+  font-family: var(--ff-head);
+  background-color: #F8F9FC; /* Light slightly bluish background */
+}
+
+.dashboard-container {
+  /* max-width: 1200px; */
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.dash-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-top: 16px;
+}
+
+.highlight-indigo {
+  color: var(--indigo);
+}
+
+/* --- Browser Mockup Window --- */
+.dash-mockup-window {
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.08); /* Soft deep shadow */
+  background-color: #F4F7FB; /* Inside mockup bg */
+  border: 1px solid #E2E8F0;
+}
+
+/* Top Browser Bar */
+.dash-top-bar {
+  background-color: #0F172A; /* Dark navy window top */
+  padding: 16px 20px;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.dash-mac-buttons {
+  display: flex;
+  gap: 8px;
+  position: absolute;
+  left: 20px;
+}
+
+.mac-btn {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.mac-btn.red { background-color: #FF5F56; }
+.mac-btn.yellow { background-color: #FFBD2E; }
+.mac-btn.green { background-color: #27C93F; }
+
+.dash-url-bar {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  font-weight: 500;
+  padding: 6px 24px;
+  border-radius: 6px;
+  margin: 0 auto;
+}
+
+/* --- App Layout --- */
+.dash-app-layout {
+  display: flex;
+  min-height: 640px;
+}
+
+/* Sidebar */
+.dash-sidebar {
+  width: 220px;
+  background-color: var(--white);
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--line);
+}
+
+.dash-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 32px;
+  padding-left: 8px;
+}
+
+.logo-icon {
+  width: 28px;
+  height: 28px;
+  background-color: var(--indigo);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dash-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+}
+
+.nav-item {
+  text-decoration: none;
+  color: var(--navy-soft);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 10px 12px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  transition: all 0.2s ease;
+}
+
+.nav-item:hover {
+  background-color: #F8FAFC;
+}
+
+.nav-item.active {
+  background-color: #EEF2FF;
+  color: var(--indigo);
+}
+
+.mt-auto {
+  margin-top: auto;
+}
+
+/* Main Content Area */
+.dash-main-content {
+  flex: 1;
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  overflow-x: hidden;
+}
+
+/* Welcome Header */
+.dash-content-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.dash-welcome {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--navy);
+  margin-bottom: 4px;
+}
+
+.dash-date {
+  font-size: 12px;
+  color: var(--navy-soft);
+  font-weight: 500;
+}
+
+.btn-primary {
+  background-color: var(--indigo);
+  color: var(--white);
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(91, 79, 232, 0.2);
+  transition: background-color 0.2s;
+}
+
+.btn-primary:hover {
+  background-color: var(--indigo-dark);
+}
+
+/* --- Stats Row --- */
+.dash-stats-row {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+}
+
+.dash-stat-card {
+  background-color: var(--white);
+  padding: 20px;
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+.stat-title {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 600;
+  margin-bottom: 8px;
+}
+
+.stat-value {
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.stat-sub {
+  font-size: 11px;
+  font-weight: 600;
+}
+
+/* Utility Colors for text/avatars */
+.text-blue { color: #3B82F6; }
+.text-purple { color: #A855F7; }
+.text-cyan { color: #06B6D4; }
+.text-green { color: #10B981; }
+
+.bg-green { background-color: #10B981; }
+.bg-blue { background-color: #3B82F6; }
+.bg-purple { background-color: #8B5CF6; }
+.bg-yellow { background-color: #F59E0B; }
+
+/* --- Data Row (Chart & List) --- */
+.dash-data-row {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 24px;
+}
+
+.dash-chart-card, 
+.dash-leads-card {
+  background-color: var(--white);
+  border-radius: 12px;
+  border: 1px solid var(--line);
+  padding: 24px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02);
+}
+
+/* Chart CSS */
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+.chart-title, .leads-title {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--navy);
+}
+
+.chart-filter {
+  font-size: 11px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+.chart-wrapper {
+  position: relative;
+}
+
+.dash-svg-chart {
+  width: 100%;
+  height: 180px;
+  overflow: visible;
+}
+
+.svg-grid-line {
+  stroke: #F1F5F9;
+  stroke-width: 1;
+  stroke-dasharray: 4 4;
+}
+
+.svg-grid-line.solid {
+  stroke-dasharray: none;
+  stroke: #E2E8F0;
+}
+
+.chart-x-axis {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 10px;
+  padding-left: 20px;
+}
+
+.chart-x-axis span {
+  font-size: 10px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+/* Leads List CSS */
+.dash-leads-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.leads-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  margin-top: 24px;
+}
+
+.lead-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #F1F5F9;
+}
+
+.lead-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.lead-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.lead-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.lead-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--navy);
+}
+
+.lead-meta {
+  font-size: 10px;
+  color: #94A3B8;
+  font-weight: 500;
+}
+
+
+
+/* =========================================
+   PRICING SECTION
+========================================= */
+
+.pricing-section {
+  padding: 80px 10%;
+  font-family: var(--ff-head);
+  background-color: var(--white);
+}
+
+.pricing-container {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.pricing-header {
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.pricing-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-top: 16px;
+  margin-bottom: 12px;
+}
+
+.highlight-violet {
+  color: var(--violet); 
+}
+
+.pricing-subtitle {
+  font-size: 16px;
+  color: var(--navy-soft);
+  line-height: 1.6;
+}
+
+/* --- Grid Layout --- */
+.pricing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: center; /* This vertically centers the cards, allowing the middle one to pop out naturally */
+}
+
+/* --- General Card Styling --- */
+.pricing-card {
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.plan-header {
+  margin-bottom: 32px;
+}
+
+.plan-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--navy-soft);
+  margin-bottom: 12px;
+}
+
+.plan-price {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--navy);
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  margin-bottom: 16px;
+}
+
+.currency {
+  font-size: 24px;
+}
+
+.period {
+  font-size: 14px;
+  font-weight: 600;
+  color: #94A3B8;
+}
+
+.plan-desc {
+  font-size: 14px;
+  color: var(--navy-soft);
+  line-height: 1.6;
+  min-height: 44px; /* Keeps standard cards aligned if text wraps differently */
+}
+
+/* Feature List */
+.plan-features {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 40px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  flex-grow: 1; /* Pushes button to the bottom */
+}
+
+.plan-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 500;
+  /* color: var(--navy); */
+  line-height: 1.4;
+}
+
+/* Icons */
+.check-icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.standard-check {
+  background-color: #EEF2FF;
+  color: var(--indigo);
+}
+
+.popular-check {
+  background-color: rgba(255, 255, 255, 0.2);
+  color: var(--white);
+}
+
+/* Buttons */
+.pricing-btn {
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.btn-solid {
+  background-color: var(--indigo);
+  color: var(--white);
+}
+
+.btn-solid:hover {
+  background-color: var(--indigo-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-white {
+  background-color: var(--white);
+  color: var(--indigo);
+}
+
+.btn-white:hover {
+  background-color: #F8FAFC;
+  box-shadow: var(--shadow-sm);
+}
+
+/* --- Card Variations --- */
+
+/* Standard Outer Cards */
+.standard-card {
+  background-color: #FCFDFE; /* Slight tint based on image */
+  border: 1px solid var(--line);
+  box-shadow: 0 4px 20px rgba(0,0,0,0.02);
+}
+
+/* Popular Middle Card */
+.popular-card {
+  background: var(--grad);
+  position: relative;
+  overflow: hidden;
+  padding-top: 48px; /* Extra padding for the top tag */
+  transform: scale(1.05); /* Makes the center card physically larger */
+  box-shadow: 0 24px 60px rgba(139, 92, 246, 0.25);
+  border: 1px solid rgba(255,255,255,0.1);
+  z-index: 2;
+}
+
+.popular-tag {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.15); /* Dark transparent band at the top */
+  color: var(--white);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  text-align: center;
+  padding: 8px 0;
+}
+
+/* Utility overrides for the popular card */
+.text-white { color: var(--white) !important; }
+.text-white-soft { color: rgba(255, 255, 255, 0.8) !important; }
+
+
+
+
+/* =========================================
+   FAQ SECTION
+========================================= */
+
+.faq-section {
+  padding: 80px 10%;
+  font-family: var(--ff-head);
+  background-color: #F8F9FC; /* Very light background matching the image */
+}
+
+/* Constrain width so text doesn't stretch too wide */
+.faq-container {
+  max-width: 70%;
+  margin: 0 auto;
+}
+
+/* --- Header --- */
+.faq-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.faq-title {
+  font-size: 42px;
+  font-weight: 800;
+  color: var(--navy);
+  letter-spacing: -0.5px;
+  margin-top: 16px;
+}
+
+.highlight-violet {
+  color: var(--violet); 
+}
+
+/* --- Accordion --- */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.faq-item {
+  background-color: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+/* Active State Styling (matching the blue-tinted border in the image) */
+.faq-item.active {
+  border-color: #DDE2F5;
+  box-shadow: 0 4px 20px rgba(91, 79, 232, 0.05); /* Very soft indigo shadow */
+}
+
+/* The Button */
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 24px;
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--navy);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  font-family: inherit;
+}
+
+/* Chevron Icon Animation */
+.chevron {
+  color: #94A3B8;
+  flex-shrink: 0;
+  transition: transform 0.3s ease;
+}
+
+.faq-item.active .chevron {
+  transform: rotate(180deg);
+  color: var(--navy);
+}
+
+/* The Hidden Answer Area */
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease;
+}
+
+.faq-answer-inner {
+  padding: 0 24px 24px 24px; /* Top padding is 0 because the button has bottom padding */
+  font-size: 14px;
+  color: var(--navy-soft);
+  line-height: 1.6;
+}
+
+
+/* =========================================
+   CALL TO ACTION (CTA) SECTION
+========================================= */
+
+.cta-section {
+  padding: 80px 10%;
+  font-family: var(--ff-head);
+  background-color: var(--bg-hero); /* Matches the light page background */
+}
+
+.cta-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Dark CTA Wrapper --- */
+.cta-wrapper {
+  position: relative;
+  border-radius: 24px;
+  background: linear-gradient(135deg, #0B1121 0%, #162E66 50%, #2E5ED5 100%);
+  padding: 80px 20px;
+  text-align: center;
+  overflow: hidden;
+  box-shadow: 0 24px 60px rgba(15, 23, 42, 0.15); /* Soft, deep drop shadow */
+}
+
+/* Background Glowing Orbs */
+.cta-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  z-index: 1;
+}
+
+.glow-top-right {
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background-color: rgba(139, 92, 246, 0.4); /* Purple/Indigo glow */
+}
+
+.glow-bottom-left {
+  bottom: -150px;
+  left: -100px;
+  width: 500px;
+  height: 500px;
+  background-color: rgba(37, 99, 235, 0.3); /* Blue glow */
+}
+
+/* --- CTA Content --- */
+.cta-content {
+  position: relative;
+  z-index: 2; /* Sits above the background glows */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Dark Theme Badge */
+.cta-badge {
+  display: inline-block;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: #93C5FD; /* Light blue text */
+  padding: 6px 16px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 600;
+  margin-bottom: 24px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.cta-title {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--white);
+  line-height: 1.2;
+  letter-spacing: -1px;
+  margin-bottom: 20px;
+}
+
+.highlight-periwinkle {
+  color: #A5B4FC; /* Soft lavender/blue */
+}
+
+.cta-subtitle {
+  font-size: 16px;
+  color: #94A3B8; /* Slate gray */
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 600px;
+}
+
+/* --- Buttons --- */
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.cta-btn {
+  text-decoration: none;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-size: 15px;
+  font-weight: 700;
+  transition: all 0.2s ease;
+}
+
+.btn-white-solid {
+  background-color: var(--white);
+  color: #1E3A8A; /* Deep blue text to contrast the white button */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.btn-white-solid:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+.btn-transparent-outline {
+  background-color: transparent;
+  color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.btn-transparent-outline:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+/* Footer Text */
+.cta-footer-note {
+  font-size: 12px;
+  color: #8296b3;
+  font-weight: 500;
+}
+
+
+
+/* =========================================
+   FOOTER SECTION
+========================================= */
+
+.site-footer {
+  padding: 80px 10%;
+  font-family: var(--ff-head);
+  background-color: #0D1240; /* Deep dark navy matching the image */
+  color: #FFFFFF;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* --- Top Grid --- */
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 60px;
+}
+
+/* Brand Column */
+.footer-logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.footer-logo .logo-icon {
+  width: 32px;
+  height: 32px;
+  background-color: var(--indigo);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-text {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--white);
+}
+
+.footer-desc {
+  font-size: 14px;
+  color: #94A3B8; /* Muted slate color */
+  line-height: 1.6;
+  margin-bottom: 24px;
+  max-width: 280px;
+}
+
+/* Social Buttons */
+.footer-socials {
+  display: flex;
+  gap: 12px;
+}
+
+.social-btn {
+  width: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #94A3B8;
+  text-decoration: none;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.social-btn:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: var(--white);
+}
+
+/* Link Columns */
+.footer-heading {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--white);
+  margin-bottom: 24px;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.footer-links a {
+  text-decoration: none;
+  color: #94A3B8;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: var(--white);
+}
+
+/* --- Divider --- */
+.footer-divider {
+  border: none;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin: 0 0 32px 0;
+}
+
+/* --- Bottom Section --- */
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #94A3B8;
+}
+
+.made-with-text .heart {
+  color: #D1D5DB;
+  font-size: 11px;
+}
+
+
+
+
+
+
 
