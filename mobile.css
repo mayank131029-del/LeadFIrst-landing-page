@@ -528,7 +528,7 @@
   }
 
   .dash-sidebar {
-    width: 180px;
+    /* width: 180px; */
   }
 }
 
@@ -548,7 +548,7 @@
 
   /* Horizontal scroll for sidebar on mobile */
   .dash-sidebar {
-    width: 100%;
+    /* width: 100%; */
     border-right: none;
     border-bottom: 1px solid var(--line);
     padding: 16px;
