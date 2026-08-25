@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - LeadFirst</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================
+       GLOBAL VARIABLES & RESETS
+    ========================================= */
+        :root {
+            --navy: #170F30;
+            --navy-soft: #5B5876;
+            --indigo: #5B4FE8;
+            --indigo-dark: #4634C9;
+            --violet: #8B5CF6;
+            --cyan: #14B8C4;
+            --green: #16A34A;
+            --grad: linear-gradient(135deg, #5B4FE8 0%, #8B5CF6 100%);
+            --bg-hero: #EEF0FB;
+            --white: #FFFFFF;
+            --line: #E6E7F5;
+            --shadow-sm: 0 2px 10px rgba(43, 44, 90, 0.06);
+            --shadow-md: 0 12px 32px rgba(79, 70, 229, 0.12);
+            --shadow-lg: 0 24px 60px rgba(79, 70, 229, 0.18);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 10px;
+            --ff-head: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--ff-head);
+            background-color: var(--white);
+            color: var(--navy);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #EEF0FD;
+            color: var(--indigo);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid var(--line);
+        }
+
+
+        /* =========================================
+       LEGAL / PRIVACY POLICY SECTION
+    ========================================= */
+        .legal-section {
+            padding: 80px 10%;
+            background-color: #F8F9FC;
+            /* Light gray to separate content from header/footer */
+        }
+
+        .legal-container {
+            max-width: 800px;
+            /* Constrained width for optimal reading experience */
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 60px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .legal-header {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .legal-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .legal-meta {
+            font-size: 14px;
+            color: #94A3B8;
+            font-weight: 500;
+        }
+
+        .legal-content {
+            color: var(--navy-soft);
+        }
+
+        .legal-content h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-top: 40px;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .legal-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .legal-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .legal-content ul {
+            margin-bottom: 24px;
+            padding-left: 24px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+        }
+
+        .legal-content a {
+            color: var(--indigo);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+
+
+        /* =========================================
+       RESPONSIVE BREAKPOINTS 
+    ========================================= */
+
+
+        @media (max-width: 768px) {
+
+            .legal-section {
+                padding: 40px 5%;
+            }
+
+            .legal-container {
+                padding: 32px 20px;
+            }
+
+            .legal-title {
+                font-size: 32px;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="nav-wrap">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about_us.html">About Us</a>
+                <a href="contact_us.html">Contact Us</a>
+                <!-- <a href="#">Integrations</a>
+                <a href="#">Pricing</a>
+                <a href="#">FAQ</a> -->
+            </nav>
+            <div class="nav-cta">
+                <a href="/login" class="login-link">Login</a>
+                <a href="/register" class="btn btn-primary">Get Started</a>
+                <button class="hamburger" id="hamburgerBtn"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <!-- <li><a href="#">Integrations</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">FAQ</a></li> -->
+            </ul>
+            <div class="mm-actions">
+                <a href="/login" class="btn btn-outline">Login</a>
+                <a href="/register" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Privacy Policy Section -->
+    <main class="legal-section">
+        <div class="legal-container">
+
+            <div class="legal-header">
+                <div class="badge">Legal</div>
+                <h1 class="legal-title">Privacy Policy</h1>
+                <p class="legal-meta">Last Updated: August 25, 2026</p>
+            </div>
+
+            <div class="legal-content">
+                <p>At LeadFirst Technologies Pvt. Ltd. ("LeadFirst", "we", "us", or "our"), we respect your privacy and
+                    are committed to protecting the personal data of our users and their clients. This Privacy Policy
+                    outlines how we collect, use, process, and safeguard your information when you use our website,
+                    dashboard, and API services.</p>
+
+                <h2>1. Information We Collect</h2>
+                <p>We collect information to provide better services to all our users. The types of personal information
+                    we collect include:</p>
+                <ul>
+                    <li><strong>Account Information:</strong> When you sign up for LeadFirst, we collect your name,
+                        email address, phone number, and billing details.</li>
+                    <li><strong>Client & Lead Data:</strong> To provide our core services (lead collection and WhatsApp
+                        automation), we process data regarding your leads on your behalf. This includes lead names,
+                        contact details, form submissions, and UTM parameters.</li>
+                    <li><strong>Integration Data:</strong> Information retrieved from third-party services you authorize
+                        us to connect with (e.g., WordPress, Meta Ads, Razorpay).</li>
+                    <li><strong>Usage Information:</strong> We collect data regarding how you interact with our
+                        platform, such as login timestamps, feature usage, and IP addresses.</li>
+                </ul>
+
+                <h2>2. How We Use Your Information</h2>
+                <p>We use the information we collect for the following purposes:</p>
+                <ul>
+                    <li>To provide, maintain, and improve our services, including isolated workspaces for digital
+                        agencies.</li>
+                    <li>To facilitate automated WhatsApp messaging sequences as configured by you.</li>
+                    <li>To process payments securely through our partnered gateways (Razorpay and Cashfree).</li>
+                    <li>To communicate with you regarding account updates, security alerts, and technical support.</li>
+                    <li>To analyze usage trends and measure platform performance.</li>
+                </ul>
+
+                <h2>3. Data Sharing & Disclosure</h2>
+                <p>We do not sell, rent, or trade your personal information. We only share information with third
+                    parties in the following circumstances:</p>
+                <ul>
+                    <li><strong>Service Providers:</strong> We share information with trusted third-party vendors who
+                        assist us in operating our platform (e.g., cloud hosting providers, WhatsApp Business API
+                        partners).</li>
+                    <li><strong>Legal Compliance:</strong> We may disclose information if required to do so by law or in
+                        response to valid requests by public authorities.</li>
+                    <li><strong>Business Transfers:</strong> If LeadFirst is involved in a merger, acquisition, or asset
+                        sale, your personal data may be transferred.</li>
+                </ul>
+
+                <h2>4. Data Security & Isolation</h2>
+                <p>Security is a core value at LeadFirst. We implement robust, industry-standard technical and
+                    organizational measures to protect your data against unauthorized access, destruction, or
+                    alteration. For our Agency plan users, we enforce strict data isolation protocols ensuring that
+                    workspaces, client data, and campaigns are completely segregated and never mixed.</p>
+
+                <h2>5. Your Rights</h2>
+                <p>Depending on your location, you may have the right to access, correct, delete, or restrict the use of
+                    your personal information. You may also have the right to request a portable copy of your data. You
+                    can manage most of this information directly within your LeadFirst Dashboard.</p>
+                <p>If you are processing lead data on behalf of your clients, you are responsible for ensuring that you
+                    have obtained the necessary consents required by applicable data protection laws before sending
+                    their data to our platform.</p>
+
+                <h2>6. Changes to This Privacy Policy</h2>
+                <p>We may update this Privacy Policy from time to time to reflect changes in our practices or for other
+                    operational, legal, or regulatory reasons. We will notify you of any material changes by posting the
+                    new Privacy Policy on this page and updating the "Last Updated" date.</p>
+
+                <h2>7. Contact Us</h2>
+                <p>If you have any questions or concerns about this Privacy Policy or our data practices, please contact
+                    our Data Protection Officer at:</p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:privacy@leadfirst.in">privacy@leadfirst.in</a><br>
+                    <strong>Address:</strong> Block C, Tech Park, Sector 62, Noida, UP 201309, India
+                </p>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- Top Section (Links & Brand) -->
+            <div class="footer-top">
+
+                <!-- Column 1: Brand Info -->
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo white.png" alt="">
+                    </a>
+                    <p class="footer-desc">
+                        The lead collection and campaign automation platform built for digital marketing agencies.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                
+                <!-- Column 5: Legal -->
+                <div class="footer-link-col">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="privacy_policy.html">Privacy & Policy</a></li>
+                        <li><a href="term_condition.html">Term & Refund Policy</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-partner">
+                    <img src="assets/startup-india-logo.png" alt="">
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="footer-divider">
+
+            <!-- Bottom Section (Copyright) -->
+            <div class="footer-bottom">
+                <p class="copyright-text">© 2026 LeadFirst Technologies Pvt. Ltd. All rights reserved.</p>
+                <p class="made-with-text">Made with <span class="heart"></span> in India</p>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Scroll back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
+</body>
+<script src="script.js"></script>
+
+</html>

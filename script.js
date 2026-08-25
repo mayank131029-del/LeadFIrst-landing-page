@@ -1,6 +1,6 @@
-window.addEventListener("resize", ()=>{
+window.addEventListener("resize", () => {
 
-    document.title = window.innerWidth
+  document.title = window.innerWidth
 })
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
     question.addEventListener('click', () => {
       const currentItem = question.parentElement;
       const currentAnswer = currentItem.querySelector('.faq-answer');
-      
+
       // Check if the clicked item is already open
       const isOpen = currentItem.classList.contains('active');
 
@@ -30,4 +30,30 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+
+const hamburgerBtn = document.getElementById('hamburgerBtn');
+const mobileMenu = document.getElementById('mobileMenu');
+hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
+
+document.addEventListener('DOMContentLoaded', () => {
+  const backToTopBtn = document.getElementById('backToTopBtn');
+
+  // Show or hide the button based on scroll position
+  window.addEventListener('scroll', () => {
+    // If user scrolls down more than 300px, show the button
+    if (window.scrollY > 300) {
+      backToTopBtn.classList.add('show');
+    } else {
+      backToTopBtn.classList.remove('show');
+    }
+  });
+
+  // Smooth scroll to top when clicked
+  backToTopBtn.addEventListener('click', () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  });
+});
 

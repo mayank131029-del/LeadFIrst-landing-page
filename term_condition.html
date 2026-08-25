@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms & Refund Policy - LeadFirst</title>
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="mobile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <style>
+        /* =========================================
+       GLOBAL VARIABLES & RESETS
+    ========================================= */
+        :root {
+            --navy: #170F30;
+            --navy-soft: #5B5876;
+            --indigo: #5B4FE8;
+            --indigo-dark: #4634C9;
+            --violet: #8B5CF6;
+            --cyan: #14B8C4;
+            --green: #16A34A;
+            --grad: linear-gradient(135deg, #5B4FE8 0%, #8B5CF6 100%);
+            --bg-hero: #EEF0FB;
+            --white: #FFFFFF;
+            --line: #E6E7F5;
+            --shadow-sm: 0 2px 10px rgba(43, 44, 90, 0.06);
+            --shadow-md: 0 12px 32px rgba(79, 70, 229, 0.12);
+            --shadow-lg: 0 24px 60px rgba(79, 70, 229, 0.18);
+            --radius-lg: 20px;
+            --radius-md: 14px;
+            --radius-sm: 10px;
+            --ff-head: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--ff-head);
+            background-color: var(--white);
+            color: var(--navy);
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .badge {
+            display: inline-block;
+            background-color: #EEF0FD;
+            color: var(--indigo);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            border: 1px solid var(--line);
+        }
+
+        /* =========================================
+       NAVIGATION BAR
+    ========================================= */
+        .site-nav {
+            background-color: var(--white);
+            padding: 20px 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid var(--line);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-brand {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 20px;
+            font-weight: 800;
+            color: var(--navy);
+            text-decoration: none;
+        }
+
+        .nav-brand-icon {
+            width: 32px;
+            height: 32px;
+            background-color: var(--indigo);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--navy-soft);
+            font-weight: 600;
+            font-size: 14px;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--indigo);
+        }
+
+        /* =========================================
+       LEGAL / TERMS & REFUND SECTION
+    ========================================= */
+        .legal-section {
+            padding: 80px 10%;
+            background-color: #F8F9FC;
+        }
+
+        .legal-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: var(--white);
+            padding: 60px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .legal-header {
+            margin-bottom: 40px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .legal-title {
+            font-size: 42px;
+            font-weight: 800;
+            color: var(--navy);
+            letter-spacing: -1px;
+            margin-bottom: 12px;
+        }
+
+        .legal-meta {
+            font-size: 14px;
+            color: #94A3B8;
+            font-weight: 500;
+        }
+
+        .legal-content {
+            color: var(--navy-soft);
+        }
+
+        .legal-content h2 {
+            font-size: 24px;
+            font-weight: 800;
+            color: var(--navy);
+            margin-top: 40px;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .legal-content h3 {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--navy);
+            margin-top: 24px;
+            margin-bottom: 12px;
+        }
+
+        .legal-content p {
+            font-size: 16px;
+            line-height: 1.7;
+            margin-bottom: 16px;
+        }
+
+        .legal-content ul {
+            margin-bottom: 24px;
+            padding-left: 24px;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        .legal-content li {
+            margin-bottom: 8px;
+        }
+
+        .legal-content a {
+            color: var(--indigo);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .legal-content a:hover {
+            text-decoration: underline;
+        }
+
+        .highlight-box {
+            background-color: #EEF2FF;
+            border-left: 4px solid var(--indigo);
+            padding: 16px 20px;
+            border-radius: 0 8px 8px 0;
+            margin: 24px 0;
+        }
+
+        .highlight-box p {
+            margin-bottom: 0;
+            color: var(--navy);
+            font-weight: 500;
+        }
+
+
+
+
+
+        @media (max-width: 768px) {
+            .site-nav {
+                padding: 20px 5%;
+            }
+
+            .nav-links {
+                display: none;
+            }
+
+            .legal-section {
+                padding: 40px 5%;
+            }
+
+            .legal-container {
+                padding: 32px 20px;
+            }
+
+            .legal-title {
+                font-size: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation Bar -->
+    <header>
+        <div class="nav-wrap">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="">
+            </a>
+            <nav class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="about_us.html">About Us</a>
+                <a href="contact_us.html">Contact Us</a>
+                <!-- <a href="#">Integrations</a>
+                <a href="#">Pricing</a>
+                <a href="#">FAQ</a> -->
+            </nav>
+            <div class="nav-cta">
+                <a href="/login" class="login-link">Login</a>
+                <a href="/register" class="btn btn-primary">Get Started</a>
+                <button class="hamburger" id="hamburgerBtn"
+                    aria-label="Menu"><span></span><span></span><span></span></button>
+            </div>
+        </div>
+        <div class="mobile-menu" id="mobileMenu">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a></li>
+                <!-- <li><a href="#">Integrations</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">FAQ</a></li> -->
+            </ul>
+            <div class="mm-actions">
+                <a href="/login" class="btn btn-outline">Login</a>
+                <a href="/register" class="btn btn-primary">Get Started</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Terms & Refund Section -->
+    <main class="legal-section">
+        <div class="legal-container">
+
+            <div class="legal-header">
+                <div class="badge">Legal</div>
+                <h1 class="legal-title">Terms & Refund Policy</h1>
+                <p class="legal-meta">Last Updated: August 25, 2026</p>
+            </div>
+
+            <div class="legal-content">
+                <p>By using the LeadFirst platform ("Service"), provided by LeadFirst Technologies Pvt. Ltd., you agree
+                    to be bound by the following Terms of Service and Refund Policy. Please read them carefully before
+                    subscribing to any of our plans.</p>
+
+                <h2>1. Subscription and Billing</h2>
+                <p>LeadFirst is a subscription-based software-as-a-service (SaaS). By selecting a subscription plan, you
+                    authorize us to charge your selected payment method on a recurring basis (monthly or annually,
+                    depending on your choice).</p>
+                <ul>
+                    <li>All subscription fees are billed in advance at the start of your billing cycle.</li>
+                    <li>You must maintain valid and up-to-date payment information in your account settings.</li>
+                    <li>In the event of a failed payment, we will attempt to retry the charge. If payment fails
+                        repeatedly, your account features may be suspended until payment is resolved.</li>
+                </ul>
+
+                <h2>2. Refund Policy</h2>
+                <p>We want you to be completely satisfied with LeadFirst. However, because our service includes access
+                    to proprietary software, API connections, and digital resources, our refund policy is strictly
+                    defined.</p>
+
+                <div class="highlight-box">
+                    <p><strong>14-Day Money-Back Guarantee:</strong> If you are on a paid plan and are not satisfied
+                        with LeadFirst, you may request a full refund within the first fourteen (14) days of your
+                        initial subscription purchase.</p>
+                </div>
+
+                <h3>Conditions for Refunds:</h3>
+                <ul>
+                    <li>The 14-day refund window applies <strong>only to your initial subscription charge</strong>.</li>
+                    <li>Renewal payments (monthly or annual renewals after the first billing cycle) are <strong>strictly
+                            non-refundable</strong>.</li>
+                    <li>Refunds are not applicable if your account has been terminated due to a violation of our
+                        Acceptable Use Policy (e.g., sending spam via WhatsApp).</li>
+                    <li>Add-on purchases, custom integration fees, or WhatsApp conversational credits (if applicable)
+                        are non-refundable.</li>
+                </ul>
+
+                <h3>How to Request a Refund:</h3>
+                <p>To request a refund within your eligible 14-day window, please email our billing team at <a
+                        href="mailto:billing@leadfirst.in">billing@leadfirst.in</a> from the email address associated
+                    with your LeadFirst account. Approved refunds will be credited back to your original payment method
+                    within 5–7 business days.</p>
+
+                <h2>3. Cancellations</h2>
+                <p>You may cancel your LeadFirst subscription at any time directly through your dashboard settings.</p>
+                <ul>
+                    <li><strong>No Pro-Rated Refunds:</strong> If you cancel your subscription before the end of your
+                        current billing cycle, your cancellation will take effect immediately, but you will not receive
+                        a refund for the remaining days in that billing cycle.</li>
+                    <li><strong>Data Retention:</strong> Upon cancellation, you will retain access to your account until
+                        the end of your paid billing period. After this period, your account will be downgraded to a
+                        restricted state, and historical lead data may be deleted after 30 days. We highly recommend
+                        exporting your data to CSV before canceling.</li>
+                </ul>
+
+                <h2>4. Account Responsibilities</h2>
+                <p>You are solely responsible for the activity that occurs on your account and for securing your account
+                    credentials. Furthermore, you agree not to:</p>
+                <ul>
+                    <li>Use the Service for any illegal, fraudulent, or unauthorized purpose.</li>
+                    <li>Violate any local, state, or international laws, particularly those concerning digital
+                        communication, spam, and data privacy (such as GDPR or TRAI regulations).</li>
+                    <li>Attempt to disrupt or compromise the integrity and security of our platform infrastructure.</li>
+                </ul>
+
+                <h2>5. Changes to Fees and Policies</h2>
+                <p>LeadFirst reserves the right to modify our subscription fees, terms, and refund policies at any time.
+                    Any changes to pricing will be communicated to you at least 30 days in advance via email. Your
+                    continued use of the Service after a price change constitutes your agreement to the new subscription
+                    amount.</p>
+
+                <h2>6. Contact Information</h2>
+                <p>If you have any questions or concerns regarding your billing, subscriptions, or our refund policy,
+                    please reach out to us:</p>
+                <p>
+                    <strong>Email:</strong> <a href="mailto:support@leadfirst.in">support@leadfirst.in</a><br>
+                    <strong>Address:</strong> Block C, Tech Park, Sector 62, Noida, UP 201309, India
+                </p>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- Site Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- Top Section (Links & Brand) -->
+            <div class="footer-top">
+
+                <!-- Column 1: Brand Info -->
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo white.png" alt="">
+                    </a>
+                    <p class="footer-desc">
+                        The lead collection and campaign automation platform built for digital marketing agencies.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                
+                <!-- Column 5: Legal -->
+                <div class="footer-link-col">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="privacy_policy.html">Privacy & Policy</a></li>
+                        <li><a href="term_condition.html">Term & Refund Policy</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-partner">
+                    <img src="assets/startup-india-logo.png" alt="">
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="footer-divider">
+
+            <!-- Bottom Section (Copyright) -->
+            <div class="footer-bottom">
+                <p class="copyright-text">© 2026 LeadFirst Technologies Pvt. Ltd. All rights reserved.</p>
+                <p class="made-with-text">Made with <span class="heart"></span> in India</p>
+            </div>
+
+        </div>
+    </footer>
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Scroll back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
+</body>
+<script src="script.js"></script>
+
+</html>

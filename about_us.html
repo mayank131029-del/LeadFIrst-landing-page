@@ -1,0 +1,641 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - LeadFirst</title>
+
+  <!-- Google Fonts -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+    integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="mobile.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* =========================================
+       GLOBAL VARIABLES & RESETS
+    ========================================= */
+    :root {
+      --navy: #170F30;
+      --navy-soft: #5B5876;
+      --indigo: #5B4FE8;
+      --indigo-dark: #4634C9;
+      --violet: #8B5CF6;
+      --cyan: #14B8C4;
+      --green: #16A34A;
+      --grad: linear-gradient(135deg, #5B4FE8 0%, #8B5CF6 100%);
+      --bg-hero: #EEF0FB;
+      --white: #FFFFFF;
+      --line: #E6E7F5;
+      --shadow-sm: 0 2px 10px rgba(43, 44, 90, 0.06);
+      --shadow-md: 0 12px 32px rgba(79, 70, 229, 0.12);
+      --shadow-lg: 0 24px 60px rgba(79, 70, 229, 0.18);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --ff-head: 'Plus Jakarta Sans', sans-serif;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: var(--ff-head);
+      background-color: var(--white);
+      /* White base for About page content */
+      color: var(--navy);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    .badge {
+      display: inline-block;
+      background-color: #EEF0FD;
+      color: var(--indigo);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      border: 1px solid var(--line);
+    }
+
+    .highlight-violet {
+      color: var(--violet);
+    }
+
+    .highlight-periwinkle {
+      color: #A5B4FC;
+    }
+
+    /* =========================================
+       ABOUT HERO SECTION
+    ========================================= */
+    .about-hero {
+      padding: 100px 10% 80px;
+      text-align: center;
+      background-color: var(--bg-hero);
+    }
+
+    .hero-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-size: 56px;
+      font-weight: 800;
+      color: var(--navy);
+      letter-spacing: -1px;
+      line-height: 1.15;
+      margin-bottom: 24px;
+    }
+
+    .hero-subtitle {
+      font-size: 18px;
+      color: var(--navy-soft);
+      line-height: 1.6;
+      margin-bottom: 0;
+    }
+
+    /* =========================================
+       OUR STORY SECTION
+    ========================================= */
+    .story-section {
+      padding: 100px 10%;
+    }
+
+    .story-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .story-content h2 {
+      font-size: 36px;
+      font-weight: 800;
+      margin-bottom: 24px;
+      letter-spacing: -0.5px;
+    }
+
+    .story-content p {
+      font-size: 16px;
+      color: var(--navy-soft);
+      line-height: 1.7;
+      margin-bottom: 20px;
+    }
+
+    .story-image-wrapper {
+      position: relative;
+      border-radius: var(--radius-lg);
+      background: var(--grad);
+      padding: 40px;
+      box-shadow: var(--shadow-lg);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 400px;
+      overflow: hidden;
+    }
+
+    /* Stylized UI Element in Graphic */
+    .story-ui-card {
+      background-color: var(--white);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      width: 100%;
+      max-width: 340px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      position: relative;
+      z-index: 2;
+    }
+
+    .ui-skeleton-line {
+      height: 12px;
+      background-color: #F1F5F9;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
+
+    .ui-skeleton-line.short {
+      width: 40%;
+      margin-bottom: 24px;
+    }
+
+    .ui-skeleton-line.bold {
+      height: 24px;
+      width: 70%;
+      background-color: #E2E8F0;
+    }
+
+    /* =========================================
+       VALUES SECTION
+    ========================================= */
+    .values-section {
+      padding: 80px 10%;
+      background-color: #F8F9FC;
+    }
+
+    .values-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .values-header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .values-header h2 {
+      font-size: 42px;
+      font-weight: 800;
+      margin-top: 16px;
+    }
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+    }
+
+    .value-card {
+      background-color: var(--white);
+      padding: 40px 32px;
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--line);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease;
+    }
+
+    .value-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .value-icon {
+      width: 56px;
+      height: 56px;
+      background-color: #EEF0FD;
+      color: var(--indigo);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 24px;
+    }
+
+    .value-card h3 {
+      font-size: 20px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    .value-card p {
+      font-size: 14px;
+      color: var(--navy-soft);
+      line-height: 1.6;
+    }
+
+    /* =========================================
+       CTA SECTION (Dark)
+    ========================================= */
+    .cta-section {
+      padding: 80px 10%;
+      background-color: var(--white);
+    }
+
+    .cta-container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .cta-wrapper {
+      position: relative;
+      border-radius: 24px;
+      background: linear-gradient(135deg, #0B1121 0%, #162E66 50%, #2E5ED5 100%);
+      padding: 80px 20px;
+      text-align: center;
+      overflow: hidden;
+      box-shadow: 0 24px 60px rgba(15, 23, 42, 0.15);
+    }
+
+    .cta-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      z-index: 1;
+    }
+
+    .glow-top-right {
+      top: -100px;
+      right: -100px;
+      width: 400px;
+      height: 400px;
+      background-color: rgba(139, 92, 246, 0.4);
+    }
+
+    .glow-bottom-left {
+      bottom: -150px;
+      left: -100px;
+      width: 500px;
+      height: 500px;
+      background-color: rgba(37, 99, 235, 0.3);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .cta-badge {
+      display: inline-block;
+      background-color: rgba(255, 255, 255, 0.08);
+      color: #93C5FD;
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 600;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .cta-title {
+      font-size: 48px;
+      font-weight: 800;
+      color: var(--white);
+      line-height: 1.2;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+
+    .cta-subtitle {
+      font-size: 16px;
+      color: #94A3B8;
+      line-height: 1.6;
+      margin-bottom: 40px;
+      max-width: 600px;
+    }
+
+    .cta-actions {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-bottom: 24px;
+    }
+
+    .cta-btn {
+      text-decoration: none;
+      padding: 14px 28px;
+      border-radius: 12px;
+      font-size: 15px;
+      font-weight: 700;
+      transition: all 0.2s ease;
+    }
+
+    .btn-white-solid {
+      background-color: var(--white);
+      color: #1E3A8A;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+
+    .btn-white-solid:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-transparent-outline {
+      background-color: transparent;
+      color: var(--white);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .btn-transparent-outline:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    .cta-footer-note {
+      font-size: 12px;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+
+    /* =========================================
+       RESPONSIVE BREAKPOINTS 
+    ========================================= */
+    @media (max-width: 1024px) {
+      .story-container {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .story-image-wrapper {
+        order: -1;
+        /* Puts image above text on smaller screens */
+      }
+
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+    }
+
+    @media (max-width: 768px) {
+
+      .about-hero,
+      .story-section,
+      .values-section,
+      .cta-section,
+      .site-footer {
+        padding: 60px 5%;
+      }
+
+      .hero-title {
+        font-size: 40px;
+      }
+
+      .cta-title {
+        font-size: 32px;
+      }
+
+      .values-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-wrapper {
+        padding: 60px 20px;
+      }
+
+      .cta-actions {
+        flex-direction: column;
+        width: 100%;
+        max-width: 320px;
+      }
+
+      .cta-btn {
+        width: 100%;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="nav-wrap">
+      <a href="index.html" class="logo">
+        <img src="assets/logo.png" alt="">
+      </a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a style="color: #5B4FE8;" href="about_us.html">About Us</a>
+        <a href="contact_us.html">Contact Us</a>
+        <!-- <a href="#">Integrations</a>
+                <a href="#">Pricing</a>
+                <a href="#">FAQ</a> -->
+      </nav>
+      <div class="nav-cta">
+        <a href="/login" class="login-link">Login</a>
+        <a href="/register" class="btn btn-primary">Get Started</a>
+        <button class="hamburger" id="hamburgerBtn" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+    <div class="mobile-menu" id="mobileMenu">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about_us.html">About Us</a></li>
+        <li><a href="contact_us.html">Contact Us</a></li>
+        <!-- <li><a href="#">Integrations</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#">FAQ</a></li> -->
+      </ul>
+      <div class="mm-actions">
+        <a href="/login" class="btn btn-outline">Login</a>
+        <a href="/register" class="btn btn-primary">Get Started</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="about-hero">
+    <div class="hero-container">
+      <h1 class="hero-title">We're on a mission to <span class="highlight-violet">fix lead leakage</span>.</h1>
+      <p class="hero-subtitle">LeadFirst was built to give digital marketing agencies a single, reliable source of truth
+        for their clients' leads, automations, and payments.</p>
+    </div>
+  </section>
+
+  <!-- Our Story Section -->
+  <section class="story-section">
+    <div class="story-container">
+      <div class="story-content">
+        <div class="badge">Our Story</div>
+        <h2>Built by marketers, for marketers.</h2>
+        <p>Before LeadFirst, we experienced the chaos of managing client leads firsthand. Leads were scattered across
+          spreadsheets, email inboxes, and messy WhatsApp groups. Attribution was a nightmare, and response times were
+          terrible.</p>
+        <p>We realized agencies didn't need another complex CRM. They needed a seamless bridge between a landing page,
+          an automated WhatsApp response, and a payment gateway.</p>
+        <p>So, we built LeadFirst. An isolated, multi-tenant platform designed specifically to make agencies look
+          brilliant in front of their clients.</p>
+      </div>
+
+      <div class="story-image-wrapper">
+        <div class="story-ui-card">
+          <div class="ui-skeleton-line bold"></div>
+          <div class="ui-skeleton-line short"></div>
+          <div class="ui-skeleton-line"></div>
+          <div class="ui-skeleton-line"></div>
+          <div class="ui-skeleton-line" style="width: 80%;"></div>
+          <br>
+          <div class="ui-skeleton-line"></div>
+          <div class="ui-skeleton-line" style="width: 60%;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Values Section -->
+  <section class="values-section">
+    <div class="values-container">
+      <div class="values-header">
+        <div class="badge">Core Values</div>
+        <h2>What drives us forward</h2>
+      </div>
+
+      <div class="values-grid">
+        <!-- Value 1 -->
+        <div class="value-card">
+          <div class="value-icon">🏢</div>
+          <h3>Agency First</h3>
+          <p>Every feature we build is designed with the agency workflow in mind. We prioritize client isolation,
+            white-labeling, and scalable management.</p>
+        </div>
+        <!-- Value 2 -->
+        <div class="value-card">
+          <div class="value-icon">⚡</div>
+          <h3>Built for Speed</h3>
+          <p>In lead generation, every second matters. We ensure leads are collected, tagged, and contacted via WhatsApp
+            within milliseconds.</p>
+        </div>
+        <!-- Value 3 -->
+        <div class="value-card">
+          <div class="value-icon">🎯</div>
+          <h3>Radical Simplicity</h3>
+          <p>No bloated features or confusing menus. We focus entirely on what gets results: collecting leads,
+            automating follow-ups, and securing payments.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section">
+    <div class="cta-container">
+      <div class="cta-wrapper">
+        <div class="cta-glow glow-top-right"></div>
+        <div class="cta-glow glow-bottom-left"></div>
+
+        <div class="cta-content">
+          <div class="cta-badge">Get Started Today</div>
+
+          <h2 class="cta-title">
+            Stop Losing Leads.<br>
+            <span class="highlight-periwinkle">Start Converting Them.</span>
+          </h2>
+
+          <p class="cta-subtitle">
+            Join 500+ agencies already using LeadFirst to capture, nurture and<br class="desktop-break"> convert leads
+            at scale.
+          </p>
+
+          <div class="cta-actions">
+            <a href="#" class="cta-btn btn-white-solid">Start Free — No Card Needed</a>
+            <a href="#" class="cta-btn btn-transparent-outline">Book a Demo</a>
+          </div>
+
+          <p class="cta-footer-note">14-day free trial · No setup fees · Cancel anytime</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+        <div class="footer-container">
+
+            <!-- Top Section (Links & Brand) -->
+            <div class="footer-top">
+
+                <!-- Column 1: Brand Info -->
+                <div class="footer-brand-col">
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo white.png" alt="">
+                    </a>
+                    <p class="footer-desc">
+                        The lead collection and campaign automation platform built for digital marketing agencies.
+                    </p>
+                    <div class="footer-socials">
+                        <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    </div>
+                </div>
+                
+                
+                <!-- Column 5: Legal -->
+                <div class="footer-link-col">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="privacy_policy.html">Privacy & Policy</a></li>
+                        <li><a href="term_condition.html">Term & Refund Policy</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-partner">
+                    <img src="assets/startup-india-logo.png" alt="">
+                </div>
+            </div>
+
+            <!-- Divider -->
+            <hr class="footer-divider">
+
+            <!-- Bottom Section (Copyright) -->
+            <div class="footer-bottom">
+                <p class="copyright-text">© 2026 LeadFirst Technologies Pvt. Ltd. All rights reserved.</p>
+                <p class="made-with-text">Made with <span class="heart"></span> in India</p>
+            </div>
+
+        </div>
+    </footer>
+  <!-- Back to Top Button -->
+  <button id="backToTopBtn" class="back-to-top" aria-label="Scroll back to top">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7" />
+    </svg>
+  </button>
+</body>
+<script src="script.js"></script>
+
+</html>

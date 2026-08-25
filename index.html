@@ -6,7 +6,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LeadFirst</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -20,43 +22,36 @@
 
     <header>
         <div class="nav-wrap">
-            <a href="#" class="logo">
-                <span class="logo-mark"><svg viewBox="0 0 24 24" fill="none">
-                        <path d="M4 11L12 4L20 11" stroke="white" stroke-width="2" stroke-linecap="round"
-                            stroke-linejoin="round" />
-                        <path d="M6 10V19C6 19.5523 6.44772 20 7 20H17C17.5523 20 18 19.5523 18 19V10" stroke="white"
-                            stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg></span>
-                <span class="lead">Lead</span><span class="first">First</span>
+            <a href="index.html" class="logo">
+                <img src="assets/logo.png" alt="">
             </a>
             <nav class="nav-links">
-                <a href="#">Features</a>
-                <a href="#">How It Works</a>
-                <a href="#">For Agencies</a>
-                <a href="#">Integrations</a>
+                <a style="color: #5B4FE8;" href="index.html">Home</a>
+                <a href="about_us.html">About Us</a>
+                <a href="contact_us.html">Contact Us</a>
+                <!-- <a href="#">Integrations</a>
                 <a href="#">Pricing</a>
-                <a href="#">FAQ</a>
+                <a href="#">FAQ</a> -->
             </nav>
             <div class="nav-cta">
-                <a href="#" class="login-link">Login</a>
-                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="/login" class="login-link">Login</a>
+                <a href="/register" class="btn btn-primary">Get Started</a>
                 <button class="hamburger" id="hamburgerBtn"
                     aria-label="Menu"><span></span><span></span><span></span></button>
             </div>
         </div>
         <div class="mobile-menu" id="mobileMenu">
             <ul>
-                <li><a href="#">Features</a></li>
-                <li><a href="#">How It Works</a></li>
-
-                <li><a href="#">For Agencies</a></li>
-                <li><a href="#">Integrations</a></li>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about_us.html">About Us</a></li>
+                <li><a href="contact_us.html">Contact Us</a></li>
+                <!-- <li><a href="#">Integrations</a></li>
                 <li><a href="#">Pricing</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="#">FAQ</a></li> -->
             </ul>
             <div class="mm-actions">
-                <a href="#" class="btn btn-outline">Login</a>
-                <a href="#" class="btn btn-primary">Get Started</a>
+                <a href="/login" class="btn btn-outline">Login</a>
+                <a href="/register" class="btn btn-primary">Get Started</a>
             </div>
         </div>
     </header>
@@ -449,235 +444,120 @@
             <!-- Card 1: Lead Collection -->
             <div class="feature-card theme-blue">
                 <div class="feature-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
-                    </svg>
+                    <img src="assets/f1.svg" alt="">
                 </div>
                 <h3 class="feature-card-title">Lead Collection</h3>
                 <p class="feature-card-desc">Capture leads from any source — forms, landing pages, APIs — and centralise
                     them with full source attribution.</p>
                 <ul class="feature-checklist">
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> 12,438 Leads collected</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Avg. 284 / day</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> 98.2% delivery rate</li>
+                    <li><i style="color: #3B6FFA;" class="fa-solid fa-check"></i> 12,438 Leads collected</li>
+                    <li><i style="color: #3B6FFA;" class="fa-solid fa-check"></i> Avg. 284 / day</li>
+                    <li><i style="color: #3B6FFA;" class="fa-solid fa-check"></i> 98.2% delivery rate</li>
                 </ul>
             </div>
 
             <!-- Card 2: Campaign Management -->
             <div class="feature-card theme-purple">
                 <div class="feature-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M3 13h8V3H3v10zm0 8h8v-6H3v6zm10 0h8V11h-8v10zm0-18v6h8V3h-8z" />
-                    </svg>
+                    <img src="assets/f2.svg" alt="">
                 </div>
                 <h3 class="feature-card-title">Campaign Management</h3>
                 <p class="feature-card-desc">Create and manage unlimited campaigns per client. Each campaign has its own
                     leads, automation, and analytics.</p>
                 <ul class="feature-checklist">
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> 17 active campaigns</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Multi-client ready</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> UTM auto-tagging</li>
+                    <li><i style="color: #7C3AED;" class="fa-solid fa-check"></i> 17 active campaigns</li>
+                    <li><i style="color: #7C3AED;" class="fa-solid fa-check"></i> Multi-client ready</li>
+                    <li><i style="color: #7C3AED;" class="fa-solid fa-check"></i> UTM auto-tagging</li>
                 </ul>
             </div>
 
             <!-- Card 3: WhatsApp Automation -->
             <div class="feature-card theme-green">
                 <div class="feature-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M20 2H4c-1.1 0-1.99.9-1.99 2L2 22l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm-2 12H6v-2h12v2zm0-3H6V9h12v2zm0-3H6V6h12v2z" />
-                    </svg>
+                    <img src="assets/f3.svg" alt="">
                 </div>
                 <h3 class="feature-card-title">WhatsApp Automation</h3>
                 <p class="feature-card-desc">Send instant WhatsApp messages on new leads, then follow up at 2h and 24h
                     automatically. No manual work.</p>
                 <ul class="feature-checklist">
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Instant delivery</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> 2h & 24h follow-up</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Personalized templates</li>
+                    <li><i style="color: #25D366;" class="fa-solid fa-check"></i> Instant delivery</li>
+                    <li><i style="color: #25D366;" class="fa-solid fa-check"></i> 2h & 24h follow-up</li>
+                    <li><i style="color: #25D366;" class="fa-solid fa-check"></i> Personalized templates</li>
                 </ul>
             </div>
 
             <!-- Card 4: Payment Collection -->
             <div class="feature-card theme-yellow">
                 <div class="feature-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path
-                            d="M20 4H4c-1.11 0-1.99.89-1.99 2L2 18c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V6c0-1.11-.89-2-2-2zm0 14H4v-6h16v6zm0-10H4V6h16v2z" />
-                    </svg>
+                    <img src="assets/f4.svg" alt="">
                 </div>
                 <h3 class="feature-card-title">Payment Collection</h3>
                 <p class="feature-card-desc">Integrate Razorpay or Cashfree into your lead flow. Collect payments inline
                     and send instant confirmations.</p>
                 <ul class="feature-checklist">
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Razorpay + Cashfree</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Payment confirmation</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Revenue tracking</li>
+                    <li><i style="color: #F6A927;" class="fa-solid fa-check"></i> Razorpay + Cashfree</li>
+                    <li><i style="color: #F6A927;" class="fa-solid fa-check"></i> Payment confirmation</li>
+                    <li><i style="color: #F6A927;" class="fa-solid fa-check"></i> Revenue tracking</li>
                 </ul>
             </div>
 
             <!-- Card 5: Lead Analytics -->
             <div class="feature-card theme-cyan">
                 <div class="feature-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M16 6l2.29 2.29-4.88 4.88-4-4L2 16.59 3.41 18l6-6 4 4 6.3-6.29L22 12V6h-6z" />
-                    </svg>
+                    <img src="assets/f5.svg" alt="">
                 </div>
                 <h3 class="feature-card-title">Lead Analytics</h3>
                 <p class="feature-card-desc">Track every lead through your funnel. See conversion rates, campaign
                     performance, and revenue by source.</p>
                 <ul class="feature-checklist">
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Full funnel visibility</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Source attribution</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Export to CSV</li>
+                    <li><i style="color: #25D366;" class="fa-solid fa-check"></i> Full funnel visibility</li>
+                    <li><i style="color: #25D366;" class="fa-solid fa-check"></i> Source attribution</li>
+                    <li><i style="color: #25D366;" class="fa-solid fa-check"></i> Export to CSV</li>
                 </ul>
             </div>
 
             <!-- Card 6: UTM Tracking -->
             <div class="feature-card theme-red">
                 <div class="feature-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M12 4l-1.41 1.41L15.17 11H4v2h11.17l-4.58 4.59L12 19l8-8-8-8z" />
-                    </svg>
+                    <img src="assets/f6.svg" alt="">
                 </div>
                 <h3 class="feature-card-title">UTM Tracking</h3>
                 <p class="feature-card-desc">Automatically capture UTM parameters from every lead. Know exactly which
                     ad, campaign or post drove revenue.</p>
                 <ul class="feature-checklist">
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Auto UTM capture</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Source breakdown</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Cost-per-lead calc</li>
+                    <li><i style="color: #EF4444;" class="fa-solid fa-check"></i> Auto UTM capture</li>
+                    <li><i style="color: #EF4444;" class="fa-solid fa-check"></i> Source breakdown</li>
+                    <li><i style="color: #EF4444;" class="fa-solid fa-check"></i> Cost-per-lead calc</li>
                 </ul>
             </div>
 
             <!-- Card 7: Client Management -->
             <div class="feature-card theme-indigo">
                 <div class="feature-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M4 6h16v2H4zm0 5h16v2H4zm0 5h16v2H4z" />
-                    </svg>
+                    <img src="assets/f7.svg" alt="">
                 </div>
                 <h3 class="feature-card-title">Client Management</h3>
                 <p class="feature-card-desc">Manage multiple clients from one account. Each client has isolated data,
                     campaigns, leads, and reports.</p>
                 <ul class="feature-checklist">
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Unlimited clients</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Isolated workspaces</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> Client-level reports</li>
+                    <li><i style="color: #7C3AED;" class="fa-solid fa-check"></i> Unlimited clients</li>
+                    <li><i style="color: #7C3AED;" class="fa-solid fa-check"></i> Isolated workspaces</li>
+                    <li><i style="color: #7C3AED;" class="fa-solid fa-check"></i> Client-level reports</li>
                 </ul>
             </div>
 
             <!-- Card 8: Integrations -->
             <div class="feature-card theme-gray">
                 <div class="feature-icon-wrapper">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-                        <path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
-                    </svg>
+                    <img src="assets/f8.svg" alt="">
                 </div>
                 <h3 class="feature-card-title">Integrations</h3>
                 <p class="feature-card-desc">Connect to WordPress, Elementor, HTML forms, PHP, REST APIs, Webhooks,
                     Meta, and more. Easy 5-min setup.</p>
                 <ul class="feature-checklist">
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> 12+ integrations</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> REST API & Webhooks</li>
-                    <li><svg class="check-icon" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd"
-                                d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z"
-                                clip-rule="evenodd" />
-                        </svg> No-code setup</li>
+                    <li><i style="color: #545778;" class="fa-solid fa-check"></i> 12+ integrations</li>
+                    <li><i style="color: #545778;" class="fa-solid fa-check"></i> REST API & Webhooks</li>
+                    <li><i style="color: #545778;" class="fa-solid fa-check"></i> No-code setup</li>
                 </ul>
             </div>
 
@@ -842,8 +722,7 @@
             <!-- Step 1 -->
             <div class="hiw-step">
                 <div class="hiw-icon-box filled-box">
-                    <span class="hiw-step-num light-num">01</span>
-                    <span class="hiw-icon">🎯</span>
+                    <img src="assets/w1.svg" alt="">
                 </div>
                 <h4 class="hiw-step-title">Create Landing Page</h4>
                 <p class="hiw-step-desc">Build a high-converting landing page and define your campaign goals, audience,
@@ -853,8 +732,7 @@
             <!-- Step 2 -->
             <div class="hiw-step">
                 <div class="hiw-icon-box outlined-box">
-                    <span class="hiw-step-num dark-num">02</span>
-                    <span class="hiw-icon" style="color: #06B6D4;">🌐</span>
+                    <img src="assets/w2.svg" alt="">
                 </div>
                 <h4 class="hiw-step-title">Setup Campaign</h4>
                 <p class="hiw-step-desc">Configure your campaign, assign your audience, and set up powerful automation
@@ -864,8 +742,7 @@
             <!-- Step 3 -->
             <div class="hiw-step">
                 <div class="hiw-icon-box filled-box">
-                    <span class="hiw-step-num light-num">03</span>
-                    <span class="hiw-icon">⚡</span>
+                    <img src="assets/w3.svg" alt="">
                 </div>
                 <h4 class="hiw-step-title">Connect Website</h4>
                 <p class="hiw-step-desc">Connect your website and let leads flow automatically with complete tracking
@@ -875,8 +752,7 @@
             <!-- Step 4 -->
             <div class="hiw-step">
                 <div class="hiw-icon-box outlined-box">
-                    <span class="hiw-step-num dark-num">04</span>
-                    <span class="hiw-icon">🤖</span>
+                    <img src="assets/w4.svg" alt="">
                 </div>
                 <h4 class="hiw-step-title">Automate Follow-Up</h4>
                 <p class="hiw-step-desc">Send instant WhatsApp messages and personalized reminders to keep every lead
@@ -886,8 +762,7 @@
             <!-- Step 5 -->
             <div class="hiw-step">
                 <div class="hiw-icon-box filled-box">
-                    <span class="hiw-step-num light-num">05</span>
-                    <span class="hiw-icon">📊</span>
+                    <img src="assets/w5.svg" alt="">
                 </div>
                 <h4 class="hiw-step-title">Track Results</h4>
                 <p class="hiw-step-desc">Monitor campaign analytics, conversion funnels, revenue, and lead performance
@@ -915,23 +790,23 @@
 
                 <!-- Row 1 -->
                 <div class="integration-card">
-                    <span class="integration-icon">🌐</span>
+                    <img src="assets/html.svg" alt="">
                     <span class="integration-name">HTML Forms</span>
                 </div>
                 <div class="integration-card">
-                    <span class="integration-icon">📝</span>
+                    <img src="assets/wordpress.svg" alt="">
                     <span class="integration-name">WordPress</span>
                 </div>
                 <div class="integration-card">
-                    <span class="integration-icon">🎨</span>
+                    <img src="assets/elementor.svg" alt="">
                     <span class="integration-name">Elementor</span>
                 </div>
                 <div class="integration-card">
-                    <span class="integration-icon">📋</span>
+                    <img src="assets/contact form.svg" alt="">
                     <span class="integration-name">Contact Form 7</span>
                 </div>
                 <div class="integration-card">
-                    <span class="integration-icon">⚙️</span>
+                   <img src="assets/php.svg" alt="">
                     <span class="integration-name">PHP Forms</span>
                 </div>
 
@@ -945,41 +820,41 @@
                     <span class="integration-name">Webhooks</span>
                 </div> -->
                 <div class="integration-card">
-                    <span class="integration-icon">💬</span>
+                    <img src="assets/whatsapp.svg" alt="">
                     <span class="integration-name">WhatsApp</span>
                 </div>
                 <div class="integration-card">
-                    <span class="integration-icon">💳</span>
+                    <img src="assets/razorpay.svg" alt="">
                     <span class="integration-name">Razorpay</span>
                 </div>
                 <div class="integration-card">
-                    <span class="integration-icon">🏦</span>
+                    <img src="assets/cashfree.svg" alt="">
                     <span class="integration-name">Cashfree</span>
                 </div>
                 <div class="integration-card">
                     <!-- <span class="soon-pill">Soon</span> -->
-                    <span class="integration-icon">📊</span>
+                    <img src="assets/google sheet.svg" alt="">
                     <span class="integration-name">Google Sheets</span>
                 </div>
 
                 <!-- Row 3 (Mix of active and upcoming) -->
                 <div class="integration-card">
-                    <span class="integration-icon">📢</span>
+                    <img src="assets/meta.svg" alt="">
                     <span class="integration-name">Meta Ads</span>
                 </div>
                 <div class="integration-card disabled-card">
                     <span class="soon-pill">Soon</span>
-                    <span class="integration-icon">⚡</span>
+                   <img src="assets/meta.svg" alt="">
                     <span class="integration-name">Zapier</span>
                 </div>
                 <div class="integration-card disabled-card">
                     <span class="soon-pill">Soon</span>
-                    <span class="integration-icon">🔶</span>
+                    <img src="assets/hubspot.svg" alt="">
                     <span class="integration-name">HubSpot</span>
                 </div>
                 <div class="integration-card disabled-card">
                     <span class="soon-pill">Soon</span>
-                    <span class="integration-icon">☁️</span>
+                    <img src="assets/salesforce.svg" alt="">
                     <span class="integration-name">Salesforce</span>
                 </div>
 
@@ -2082,76 +1957,36 @@
 
                 <!-- Column 1: Brand Info -->
                 <div class="footer-brand-col">
-                    <div class="footer-logo">
-                        <div class="logo-icon">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="white">
-                                <path d="M12 2L2 22h20L12 2z" />
-                            </svg>
-                        </div>
-                        <span class="logo-text">LeadFirst</span>
-                    </div>
+                    <a href="index.html" class="footer-logo">
+                        <img src="assets/logo white.png" alt="">
+                    </a>
                     <p class="footer-desc">
                         The lead collection and campaign automation platform built for digital marketing agencies.
                     </p>
                     <div class="footer-socials">
                         <a href="#" class="social-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                        <a href="#" class="social-btn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                        <a href="#" class="social-btn" aria-label="LinkedIn"><i
+                                class="fa-brands fa-linkedin-in"></i></a>
                         <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
                     </div>
-                    <div class="footer-partner">
-                        <img src="assets/startup-india-logo.png" alt="">
-                    </div>
                 </div>
-
-                <!-- Column 2: Product -->
-                <!-- <div class="footer-link-col">
-                    <h4 class="footer-heading">Product</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Features</a></li>
-                        <li><a href="#">How It Works</a></li>
-                        <li><a href="#">Integrations</a></li>
-                        <li><a href="#">Pricing</a></li>
-                        <li><a href="#">Changelog</a></li>
-                        <li><a href="#">Roadmap</a></li>
-                    </ul>
-                </div> -->
-
-                <!-- Column 3: Resources -->
-                <!-- <div class="footer-link-col"> -->
-                    <!-- <h4 class="footer-heading">Resources</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">Documentation</a></li>
-                        <li><a href="#">API Reference</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Case Studies</a></li>
-                        <li><a href="#">Status Page</a></li>
-                    </ul>
-                </div> -->
-
-                <!-- Column 4: Company -->
-                <!-- <div class="footer-link-col">
-                    <h4 class="footer-heading">Company</h4>
-                    <ul class="footer-links">
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press Kit</a></li>
-                        <li><a href="#">Partners</a></li>
-                        <li><a href="#">Contact</a></li>
-                    </ul>
-                </div> -->
-
+                
+                
                 <!-- Column 5: Legal -->
                 <div class="footer-link-col">
                     <h4 class="footer-heading">Legal</h4>
                     <ul class="footer-links">
-                        <li><a href="#">Privacy Policy</a></li>
-                        <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Data Processing</a></li>
-                        <li><a href="#">Security</a></li>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about_us.html">About Us</a></li>
+                        <li><a href="privacy_policy.html">Privacy & Policy</a></li>
+                        <li><a href="term_condition.html">Term & Refund Policy</a></li>
+                        <li><a href="contact_us.html">Contact Us</a></li>
                     </ul>
                 </div>
-
+                
+                <div class="footer-partner">
+                    <img src="assets/startup-india-logo.png" alt="">
+                </div>
             </div>
 
             <!-- Divider -->
@@ -2160,17 +1995,19 @@
             <!-- Bottom Section (Copyright) -->
             <div class="footer-bottom">
                 <p class="copyright-text">© 2026 LeadFirst Technologies Pvt. Ltd. All rights reserved.</p>
-                <p class="made-with-text">Made with <span class="heart">🤍</span> in India 🇮🇳</p>
+                <p class="made-with-text">Made with <span class="heart"></span> in India</p>
             </div>
 
         </div>
     </footer>
 
-    <script>
-        const hamburgerBtn = document.getElementById('hamburgerBtn');
-        const mobileMenu = document.getElementById('mobileMenu');
-        hamburgerBtn.addEventListener('click', () => mobileMenu.classList.toggle('open'));
-    </script>
+    <!-- Back to Top Button -->
+    <button id="backToTopBtn" class="back-to-top" aria-label="Scroll back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 19V5M5 12l7-7 7 7" />
+        </svg>
+    </button>
 </body>
 <script src="script.js"></script>
 

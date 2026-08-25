@@ -1,7 +1,7 @@
 /* ---------- RESPONSIVE ---------- */
 @media (min-width:860px) {
 
- 
+
 
   .nav-links {
     display: flex;
@@ -194,9 +194,11 @@
 
 /* Mobile Breakpoint (768px) */
 @media (max-width: 768px) {
-   header {
+
+  header {
     padding: 0;
   }
+
   .title {
     font-size: 32px;
   }
@@ -357,6 +359,15 @@
 
 /* Large Mobile Devices */
 @media (max-width: 768px) {
+  .footer-logo {
+    width: 25%;
+  }
+
+  .logo {
+    /* background-color: yellow; */
+    width: 30%;
+  }
+
   .integrations-title {
     font-size: 32px;
   }
@@ -368,6 +379,7 @@
 
 /* Small Mobile Devices */
 @media (max-width: 480px) {
+
   .integrations-grid {
     grid-template-columns: 1fr;
   }
@@ -714,5 +726,21 @@
   .footer-top {
     grid-template-columns: 1fr;
     /* Stack everything */
+  }
+}
+
+
+
+@media (max-width: 768px) {
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 44px;
+    height: 44px;
+  }
+  
+  .back-to-top svg {
+    width: 20px;
+    height: 20px;
   }
 }
