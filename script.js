@@ -57,3 +57,44 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const wrapper = document.getElementById("marquee-wrapper");
+    const track = document.getElementById("marquee-track");
+
+    if (wrapper && track) {
+        // 1. Clone the content automatically for a seamless loop
+        track.innerHTML += track.innerHTML;
+
+        let position = 0;
+        let speed = 0.8; // Change this to make it faster or slower (e.g., 0.5 or 2)
+        let isPaused = false;
+
+        function animateMarquee() {
+            if (!isPaused) {
+                position -= speed;
+                
+                // 2. When it scrolls halfway (the length of the original content), reset to 0
+                if (Math.abs(position) >= track.scrollWidth / 2) {
+                    position = 0;
+                }
+                
+                // 3. Apply the movement
+                track.style.transform = `translateX(${position}px)`;
+            }
+            
+            // 4. Request the next frame for smooth 60fps animation
+            requestAnimationFrame(animateMarquee);
+        }
+
+        // 5. (Optional) Pause the scroll when the user hovers over it
+        wrapper.addEventListener("mouseenter", () => isPaused = true);
+        wrapper.addEventListener("mouseleave", () => isPaused = false);
+
+        // Start the loop
+        animateMarquee();
+    }
+});
+

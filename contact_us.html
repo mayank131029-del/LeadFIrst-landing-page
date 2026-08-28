@@ -6,10 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - LeadFirst</title>
 
-  <!-- Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
-    integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
-    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!-- Google Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
     integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -41,7 +38,7 @@
       --line: #E6E7F5;
       --shadow-sm: 0 2px 10px rgba(43, 44, 90, 0.06);
       --shadow-md: 0 12px 32px rgba(79, 70, 229, 0.12);
-      --shadow-lg: 0 24px 60px rgba(79, 70, 229, 0.18);
+      --shadow-lg: 0 20px 50px rgba(23, 15, 48, 0.08);
       --radius-lg: 20px;
       --radius-md: 14px;
       --radius-sm: 10px;
@@ -65,7 +62,6 @@
     .badge {
       display: inline-block;
       background-color: #EEF0FD;
-      /* website-bg */
       color: var(--indigo);
       padding: 6px 16px;
       border-radius: 20px;
@@ -77,21 +73,28 @@
 
 
     /* =========================================
-       CONTACT US SECTION
+       CONTACT US - NEW GRID LAYOUT
     ========================================= */
     .contact-section {
-      padding: 80px 10%;
+      padding: 80px 5%;
     }
 
     .contact-container {
-      max-width: 1200px;
+      max-width: 1100px;
       margin: 0 auto;
     }
 
-    .contact-header {
-      text-align: center;
-      max-width: 700px;
-      margin: 0 auto 60px;
+    /* Top Row: Title & Socials */
+    .contact-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 50px;
+      gap: 30px;
+    }
+
+    .header-text {
+      max-width: 600px;
     }
 
     .contact-title {
@@ -99,12 +102,8 @@
       font-weight: 800;
       color: var(--navy);
       letter-spacing: -0.5px;
-      margin-top: 16px;
       margin-bottom: 16px;
-    }
-
-    .highlight-violet {
-      color: var(--violet);
+      line-height: 1.1;
     }
 
     .contact-subtitle {
@@ -113,191 +112,178 @@
       line-height: 1.6;
     }
 
-    .contact-grid {
-      /* align-items: center; */
-      justify-content: center;
+    .header-socials {
       display: flex;
-      /* flex-direction: column; */
-      /* grid-template-columns: 1fr 1.2fr; */
-      gap: 60px;
-      align-items: flex-start;
+      gap: 12px;
     }
 
-    /* --- Left Column: Info Cards --- */
-    .contact-info-col {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      gap: 50px;
-    }
-
-    .contact-form-col {
-      width: 100%;
-    }
-
-    .cinfo-card {
-      display: flex;
-      gap: 16px;
-    }
-
-    .info-icon {
-      width: 48px;
-      height: 48px;
+    .social-icon-btn {
+      width: 44px;
+      height: 44px;
       background-color: var(--white);
-      border: 1px solid var(--line);
-      border-radius: 12px;
+      border-radius: 8px;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 20px;
-      flex-shrink: 0;
-      box-shadow: var(--shadow-sm);
-    }
-
-    .info-text h4 {
-      font-size: 16px;
-      font-weight: 700;
-      color: var(--navy);
-      margin-bottom: 4px;
-    }
-
-    .info-text p,
-    .info-text address {
-      font-size: 14px;
       color: var(--navy-soft);
-      line-height: 1.5;
-      margin-bottom: 8px;
-      font-style: normal;
-    }
-
-    .info-text a {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--indigo);
+      font-size: 18px;
       text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .info-text a:hover {
-      color: var(--indigo-dark);
-    }
-
-    /* --- Right Column: Form Card --- */
-    .form-card {
-      background-color: var(--white);
-      border-radius: var(--radius-lg);
-      padding: 40px;
-      box-shadow: var(--shadow-md);
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s ease;
       border: 1px solid var(--line);
     }
 
-    .form-title {
-      font-size: 24px;
-      font-weight: 800;
-      color: var(--navy);
-      margin-bottom: 8px;
+    .social-icon-btn:hover {
+      background-color: var(--indigo);
+      color: var(--white);
+      border-color: var(--indigo);
+      transform: translateY(-2px);
     }
 
-    .form-desc {
-      font-size: 14px;
+    /* Middle Row: Info Cards */
+    .contact-cards-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 40px;
+    }
+
+    .info-card {
+      background-color: var(--white);
+      padding: 30px 24px;
+      border-radius: 12px;
+      box-shadow: var(--shadow-sm);
+      border-bottom: 4px solid var(--indigo);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .info-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-md);
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .card-header i {
+      color: var(--indigo);
+      font-size: 22px;
+    }
+
+    .card-header h4 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--navy);
+    }
+
+    .info-card p,
+    .info-card a {
+      font-size: 15px;
       color: var(--navy-soft);
-      margin-bottom: 32px;
+      line-height: 1.6;
+      text-decoration: none;
+    }
+
+    .info-card a {
+      transition: color 0.2s;
+    }
+
+    .info-card a:hover {
+      color: var(--indigo);
+    }
+
+    /* Bottom Row: Form Container */
+    .contact-form-container {
+      background-color: var(--white);
+      padding: 40px;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
     }
 
     .contact-form {
       display: flex;
       flex-direction: column;
-      gap: 20px;
+      gap: 24px;
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .form-group {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .form-group label {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--navy);
+      gap: 24px;
     }
 
     .form-group input,
-    .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 12px 16px;
-      border: 1px solid #DDE2F5;
-      border-radius: 8px;
+      padding: 16px 20px;
+      border: 1px solid transparent;
+      border-radius: 10px;
       font-family: inherit;
-      font-size: 14px;
+      font-size: 15px;
       color: var(--navy);
-      background-color: #FAFBFF;
-      transition: border-color 0.2s, box-shadow 0.2s;
+      background-color: #F4F6FB;
+      transition: all 0.3s ease;
     }
 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
-      color: #94A3B8;
+      color: #8C98A4;
     }
 
     .form-group input:focus,
-    .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
       border-color: var(--indigo);
-      box-shadow: 0 0 0 3px rgba(91, 79, 232, 0.1);
+      box-shadow: 0 0 0 4px rgba(91, 79, 232, 0.1);
       background-color: var(--white);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 100px;
+      min-height: 160px;
+    }
+
+    .form-submit {
+      display: flex;
+      /* justify-content: flex-end; */
     }
 
     .submit-btn {
       background-color: var(--indigo);
       color: var(--white);
       border: none;
-      padding: 14px 24px;
-      border-radius: 8px;
-      font-size: 15px;
+      padding: 16px 50px;
+      border-radius: 10px;
+      font-size: 16px;
       font-weight: 700;
       cursor: pointer;
-      transition: background-color 0.2s, transform 0.2s;
-      width: 100%;
-      margin-top: 8px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
 
     .submit-btn:hover {
       background-color: var(--indigo-dark);
       transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(91, 79, 232, 0.2);
     }
 
     /* =========================================
        RESPONSIVE BREAKPOINTS 
     ========================================= */
     @media (max-width: 992px) {
-      .contact-grid {
-        /* grid-template-columns: 1fr; */
+      .contact-cards-row {
+        grid-template-columns: 1fr;
+      }
+
+      .contact-header-row {
         flex-direction: column;
-        gap: 40px;
-      }
-
-      .contact-info-col {
-        flex-direction: row;
-        flex-wrap: wrap;
-        justify-content: space-between;
-      }
-
-      .info-card {
-        flex: 1 1 250px;
+        align-items: flex-start;
       }
     }
 
@@ -312,19 +298,18 @@
         font-size: 36px;
       }
 
-      .form-card {
-        padding: 24px;
-      }
-
       .form-row {
         grid-template-columns: 1fr;
       }
 
-      .contact-info-col {
-        flex-direction: column;
-        gap: 60px;
+      .contact-form-container {
+        padding: 24px;
       }
 
+      .submit-btn {
+        width: 100%;
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -341,9 +326,6 @@
         <a href="index.html">Home</a>
         <a href="about_us.html">About Us</a>
         <a style="color: #5B4FE8;" href="contact_us.html">Contact Us</a>
-        <!-- <a href="#">Integrations</a>
-                <a href="#">Pricing</a>
-                <a href="#">FAQ</a> -->
       </nav>
       <div class="nav-cta">
         <a href="/login" class="login-link">Login</a>
@@ -356,9 +338,6 @@
         <li><a href="#">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contact Us</a></li>
-        <!-- <li><a href="#">Integrations</a></li>
-                <li><a href="#">Pricing</a></li>
-                <li><a href="#">FAQ</a></li> -->
       </ul>
       <div class="mm-actions">
         <a href="/login" class="btn btn-outline">Login</a>
@@ -371,93 +350,78 @@
   <main class="contact-section">
     <div class="contact-container">
 
-      <div class="contact-header">
-        <div class="badge">Contact Us</div>
-        <h1 class="contact-title">Let's start a <span class="highlight-violet">conversation</span></h1>
-        <p class="contact-subtitle">Have questions about LeadFirst? Whether you're a small business or a large agency,
-          our team is ready to help you convert more leads.</p>
+      <!-- Top Row: Title & Socials -->
+      <div class="contact-header-row">
+        <div class="header-text">
+          <h1 class="contact-title">Get in Touch</h1>
+          <p class="contact-subtitle">For press inquiries, sponsorship opportunities, or general information regarding
+            our platform and services.</p>
+        </div>
+        <!-- <div class="header-socials">
+          <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div> -->
       </div>
 
-      <div class="contact-grid">
-
-        <div class="contact-info-col">
-          <div class="cinfo-card">
-            <div class="info-icon">✉️</div>
-            <div class="info-text">
-              <h4>Chat with Sales</h4>
-              <p>Speak to our friendly team.</p>
-              <a href="mailto:sales@leadfirst.in">sales@leadfirst.in</a>
-            </div>
+      <!-- Middle Row: Cards -->
+      <div class="contact-cards-row">
+        <div class="info-card">
+          <div class="card-header">
+            <i class="fa-solid fa-location-dot"></i>
+            <h4>Headquarters</h4>
           </div>
-
-          <div class="cinfo-card">
-            <div class="info-icon">💬</div>
-            <div class="info-text">
-              <h4>Support & Help</h4>
-              <p>We're here to help with any technical issues.</p>
-              <a href="mailto:support@leadfirst.in">support@leadfirst.in</a>
-            </div>
-          </div>
-
-          <div class="cinfo-card">
-            <div class="info-icon">📍</div>
-            <div class="info-text">
-              <h4>Visit Us</h4>
-              <p>Drop by our office for a coffee.</p>
-              <address>
-                Block C, Tech Park<br>
-                Sector 62, Noida<br>
-                UP 201309, India
-              </address>
-            </div>
-          </div>
+          <p>Block C, Tech Park, Sector 62<br>Noida, UP 201309, India</p>
         </div>
 
-        <div class="contact-form-col">
-          <div class="form-card">
-            <h3 class="form-title">Send us a message</h3>
-            <p class="form-desc">Fill out the form below and we'll get back to you within 24 hours.</p>
-
-            <form action="#" method="POST" class="contact-form">
-              <div class="form-row">
-                <div class="form-group">
-                  <label for="firstName">First Name</label>
-                  <input type="text" id="firstName" name="firstName" placeholder="John" required>
-                </div>
-                <div class="form-group">
-                  <label for="lastName">Last Name</label>
-                  <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
-                </div>
-              </div>
-
-              <div class="form-group">
-                <label for="email">Work Email</label>
-                <input type="email" id="email" name="email" placeholder="john@company.com" required>
-              </div>
-
-              <div class="form-group">
-                <label for="subject">How can we help?</label>
-                <select id="subject" name="subject" required>
-                  <option value="" disabled selected>Select an option...</option>
-                  <option value="sales">Sales Inquiry</option>
-                  <option value="support">Technical Support</option>
-                  <option value="agency">Agency Partnership</option>
-                  <option value="other">Other</option>
-                </select>
-              </div>
-
-              <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="4" placeholder="Tell us a bit about your needs..."
-                  required></textarea>
-              </div>
-
-              <button type="submit" class="submit-btn">Send Message</button>
-            </form>
+        <div class="info-card">
+          <div class="card-header">
+            <i class="fa-solid fa-phone"></i>
+            <h4>Phone</h4>
           </div>
+          <p>+91 98765 43210</p>
         </div>
 
+        <div class="info-card">
+          <div class="card-header">
+            <i class="fa-solid fa-envelope"></i>
+            <h4>Email</h4>
+          </div>
+          <a href="mailto:sales@leadfirst.in">sales@leadfirst.in</a>
+        </div>
       </div>
+
+      <!-- Bottom Row: Form Container -->
+      <div class="contact-form-container">
+        <form action="#" method="POST" class="contact-form">
+
+          <div class="form-row">
+            <div class="form-group">
+              <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+            </div>
+            <div class="form-group">
+              <input type="email" id="email" name="email" placeholder="Email Address" required>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <input type="text" id="subject" name="subject" placeholder="Subject" required>
+          </div>
+
+          <div class="form-group">
+            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+          </div>
+
+          <div class="form-submit">
+            <button type="submit" class="submit-btn">
+              Send Message <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+
+        </form>
+      </div>
+
     </div>
   </main>
 
@@ -482,7 +446,6 @@
             <a href="#" class="social-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
           </div>
         </div>
-
 
         <!-- Column 5: Legal -->
         <div class="footer-link-col">
