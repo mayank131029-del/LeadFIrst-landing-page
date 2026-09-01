@@ -46,14 +46,14 @@
   }
 
   .container {
-    max-width: 80%;
+    max-width: 90%;
     margin: 0 auto;
     padding: 0 20px;
   }
 
   /* ---------- HEADER ---------- */
   header {
-    padding: 0 10%;
+    padding: 0 5%;
     background: #fff;
     border-bottom: 1px solid var(--line);
   }
@@ -2762,41 +2762,43 @@
   .lead-section {
     /* max-width: 80%; */
     margin: 0 auto;
-    padding: 80px 10%;
+    padding: 80px 5%;
   }
 
   /* === Top Features Bar === */
   .features-wrapper {
-    width: 100%;
+    width: 90%;
+    margin: auto;
     overflow: hidden;
     white-space: nowrap;
-    background: var(--clr-primary); 
+    background: var(--clr-primary);
     color: var(--clr-text);
     padding: var(--space-4) 0;
     display: flex;
-}
+  }
 
-.features-track {
+  .features-track {
     display: flex;
     align-items: center;
     gap: 45px;
     width: max-content;
     /* We add padding-right equal to the gap so the cloned items space out perfectly */
     padding-right: var(--space-5);
-    will-change: transform; /* Optimizes performance for moving elements */
-}
+    will-change: transform;
+    /* Optimizes performance for moving elements */
+  }
 
-.feature-item {
+  .feature-item {
     display: flex;
     align-items: center;
     gap: var(--space-2);
     font-weight: var(--fw-medium);
-}
+  }
 
-.divider {
+  .divider {
     color: var(--clr-accent);
     opacity: 0.5;
-}
+  }
 
   /* .feature-item:not(:last-child)::after {
     content: "";
@@ -2847,9 +2849,19 @@
 
   /* === Comparison Grid === */
   .comparison-grid {
+    justify-content: center;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 0.1fr 2fr;
     gap: 30px;
+  }
+
+  .vs-box {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--navy-soft);
   }
 
   .comparison-box {
@@ -2928,8 +2940,8 @@
 
   /* -- After Box Styles -- */
   .after-box {
-    background-color: rgba(59, 110, 250, 0.04);
-    border: 2px solid rgba(59, 110, 250, 0.15);
+    background-color: rgba(59, 250, 91, 0.116);
+    border: 2px solid rgba(59, 250, 91, 0.267);
   }
 
   .green-bg {
@@ -3114,9 +3126,9 @@
 ========================================= */
 
   .features-section {
-    max-width: 1400px;
+    /* max-width: 1400px; */
     margin: 0 auto;
-    padding: 80px 20px;
+    padding: 80px 5%;
     font-family: var(--ff-head);
   }
 
@@ -3175,7 +3187,8 @@
     justify-content: center;
     margin-bottom: 24px;
   }
-  .feature-icon-wrapper img{
+
+  .feature-icon-wrapper img {
     width: 100%;
   }
 
@@ -3230,7 +3243,7 @@
     background-color: var(--white);
     /* max-width: 1400px; */
     margin: 0 auto;
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
   }
 
@@ -3446,7 +3459,7 @@
 
   /* Top most section CSS strictly formatted to your request */
   .hiw-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     /* Assuming the light background matches the previous sections */
     background-color: var(--bg-hero);
@@ -3485,15 +3498,26 @@
 
   /* Horizontal connecting line */
   .hiw-connecting-line {
+    overflow: hidden;
     position: absolute;
     top: 57px;
     /* Aligns with the middle of the 80px icon boxes */
     left: 10%;
     right: 10%;
-    height: 2px;
+    height: 3px;
     background-color: #DDE2F5;
     /* Light blueish line color */
     z-index: 1;
+  }
+
+  .hiw-line-dot {
+    transition: 0.12s all ease;
+    width: 20px;
+    border-radius: var(--radius-md);
+    height: 100%;
+    background-color: var(--campaign-color);
+    box-shadow: var(--shadow-md);
+    position: absolute;
   }
 
   .hiw-step {
@@ -3518,10 +3542,22 @@
     align-items: center;
     position: relative;
     margin-bottom: 15px;
+    transition: transform 0.3s ease;
+    cursor: pointer;
   }
-  .hiw-icon-box img{
+
+  .hiw-icon-box img {
     width: 100%;
     /* box-shadow: var(--shadow-md); */
+  }
+
+
+  .hiw-icon-box.active {
+    transform: translateY(-5px);
+  }
+
+  .hiw-icon-box:hover {
+    transform: scale(1.05);
   }
 
   .hiw-icon {
@@ -3577,7 +3613,7 @@
 ========================================= */
 
   .integrations-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: var(--white);
     /* Assuming this section has a white background */
@@ -3625,24 +3661,32 @@
     /* Very light tint matching the image */
     border: 1px solid var(--line);
     border-radius: var(--radius-md);
-    padding: 24px 16px;
+    padding: 35px 15px;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: start;
     justify-content: center;
     gap: 12px;
-    text-align: center;
+    text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
     cursor: pointer;
     position: relative;
   }
-  .integration-card img{
+
+  .integration-card img {
     width: 55px;
   }
+
   .integration-card:not(.disabled-card):hover {
     transform: translateY(-3px);
     box-shadow: var(--shadow-sm);
     border-color: #DDE2F5;
+  }
+
+  .integration-card:not(.disabled-card):hover .integration-description {
+     opacity: 1;
+    max-height: 100px;
+    margin-top: 10px;
   }
 
   .integration-icon {
@@ -3650,10 +3694,27 @@
   }
 
   .integration-name {
-    font-size: 13px;
+    font-size: 18px;
     font-weight: 700;
     color: var(--navy);
   }
+
+  .integration-description {
+    font-size: 15px;
+    color: var(--navy-soft);
+    line-height: 1.5;
+
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    margin: 0;
+
+    transition:
+        opacity 0.25s ease,
+        max-height 0.3s ease,
+        margin 0.3s ease;
+  }
+
 
   /* --- Disabled "Soon" Cards --- */
   .disabled-card {
@@ -3688,7 +3749,7 @@
 ========================================= */
 
   .wa-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: var(--bg-hero);
     /* Matches the light background */
@@ -3920,7 +3981,7 @@
 ========================================= */
 
   .payment-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: var(--white);
     /* Ensures a clean white background for contrast */
@@ -4074,7 +4135,7 @@
 ========================================= */
 
   .agency-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: var(--bg-hero);
     /* Soft bluish background */
@@ -4090,6 +4151,20 @@
     text-align: center;
     /* max-width: 700px; */
     margin: 0 auto 50px;
+  }
+  .agency-cta-box{
+    display: flex;
+    justify-content: center;
+    padding: 25px 0;
+  }
+  .agency-cta-box a{
+    font-size: 16px;
+    padding: 15px 70px;
+    transition: all 0.2s ease;
+  }
+
+  .agency-cta-box a:hover{
+    transform: translateY(-2px);
   }
 
   .agency-title {
@@ -4292,7 +4367,7 @@
 ========================================= */
 
   .analytics-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: var(--white);
   }
@@ -4579,7 +4654,7 @@
 ========================================= */
 
   .dashboard-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: #F8F9FC;
     /* Light slightly bluish background */
@@ -4981,7 +5056,7 @@
 ========================================= */
 
   .pricing-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: var(--white);
   }
@@ -5205,7 +5280,7 @@
 ========================================= */
 
   .faq-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: #F8F9FC;
     /* Very light background matching the image */
@@ -5308,7 +5383,7 @@
 ========================================= */
 
   .cta-section {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: var(--bg-hero);
     /* Matches the light page background */
@@ -5457,7 +5532,7 @@
 ========================================= */
 
   .site-footer {
-    padding: 80px 10%;
+    padding: 80px 5%;
     font-family: var(--ff-head);
     background-color: #0D1240;
     /* Deep dark navy matching the image */
@@ -5465,7 +5540,7 @@
   }
 
   .footer-container {
-    max-width: 1200px;
+    /* max-width: 1200px; */
     margin: 0 auto;
   }
 
@@ -5486,7 +5561,7 @@
     margin-bottom: 24px;
   }
 
-  .footer-logo img{
+  .footer-logo img {
     width: 100%;
   }
 
@@ -5596,42 +5671,44 @@
    BACK TO TOP BUTTON
 ========================================= */
 
-.back-to-top {
-  position: fixed;
-  bottom: 40px;
-  right: 40px;
-  width: 50px;
-  height: 50px;
-  background-color: var(--indigo);
-  color: var(--white);
-  border: none;
-  border-radius: 50%; /* Makes it a perfect circle */
-  box-shadow: var(--shadow-md);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  z-index: 999;
-  
-  /* Hidden state by default */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(20px);
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
+  .back-to-top {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--indigo);
+    color: var(--white);
+    border: none;
+    border-radius: 50%;
+    /* Makes it a perfect circle */
+    box-shadow: var(--shadow-md);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
 
-/* Class added via JavaScript when scrolling down */
-.back-to-top.show {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
+    /* Hidden state by default */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
 
-.back-to-top:hover {
-  background-color: var(--indigo-dark);
-  transform: translateY(-4px); /* Slight hover lift */
-  box-shadow: var(--shadow-lg);
-}
+  /* Class added via JavaScript when scrolling down */
+  .back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .back-to-top:hover {
+    background-color: var(--indigo-dark);
+    transform: translateY(-4px);
+    /* Slight hover lift */
+    box-shadow: var(--shadow-lg);
+  }
 
 
 

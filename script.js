@@ -60,41 +60,92 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    
-    const wrapper = document.getElementById("marquee-wrapper");
-    const track = document.getElementById("marquee-track");
 
-    if (wrapper && track) {
-        // 1. Clone the content automatically for a seamless loop
-        track.innerHTML += track.innerHTML;
+  const wrapper = document.getElementById("marquee-wrapper");
+  const track = document.getElementById("marquee-track");
 
-        let position = 0;
-        let speed = 0.8; // Change this to make it faster or slower (e.g., 0.5 or 2)
-        let isPaused = false;
+  if (wrapper && track) {
+    // 1. Clone the content automatically for a seamless loop
+    track.innerHTML += track.innerHTML;
 
-        function animateMarquee() {
-            if (!isPaused) {
-                position -= speed;
-                
-                // 2. When it scrolls halfway (the length of the original content), reset to 0
-                if (Math.abs(position) >= track.scrollWidth / 2) {
-                    position = 0;
-                }
-                
-                // 3. Apply the movement
-                track.style.transform = `translateX(${position}px)`;
-            }
-            
-            // 4. Request the next frame for smooth 60fps animation
-            requestAnimationFrame(animateMarquee);
+    let position = 0;
+    let speed = 0.8; // Change this to make it faster or slower (e.g., 0.5 or 2)
+    let isPaused = false;
+
+    function animateMarquee() {
+      if (!isPaused) {
+        position -= speed;
+
+        // 2. When it scrolls halfway (the length of the original content), reset to 0
+        if (Math.abs(position) >= track.scrollWidth / 2) {
+          position = 0;
         }
 
-        // 5. (Optional) Pause the scroll when the user hovers over it
-        wrapper.addEventListener("mouseenter", () => isPaused = true);
-        wrapper.addEventListener("mouseleave", () => isPaused = false);
+        // 3. Apply the movement
+        track.style.transform = `translateX(${position}px)`;
+      }
 
-        // Start the loop
-        animateMarquee();
+      // 4. Request the next frame for smooth 60fps animation
+      requestAnimationFrame(animateMarquee);
     }
+
+    // 5. (Optional) Pause the scroll when the user hovers over it
+    wrapper.addEventListener("mouseenter", () => isPaused = true);
+    wrapper.addEventListener("mouseleave", () => isPaused = false);
+
+    // Start the loop
+    animateMarquee();
+  }
 });
+
+
+
+let linedot = document.querySelector(".hiw-line-dot")
+let container = document.querySelector(".hiw-section")
+let line = document.querySelector(".hiw-connecting-line")
+
+const hiw_icons = document.querySelectorAll(".hiw-icon-box");
+
+function checkIcons() {
+  hiw_icons.forEach((icon) => {
+    const iconRect = icon.getBoundingClientRect();
+    const lineRect = line.getBoundingClientRect();
+
+    const iconCenter =
+      ((iconRect.left + iconRect.width / 2 - lineRect.left) / lineRect.width) * 100;
+
+    if (leftcount >= iconCenter) {
+      icon.classList.add("active");
+    }
+  });
+}
+
+
+
+
+
+let animationId = null;
+let leftcount = 0;
+
+function autolinefill() {
+  leftcount += 0.25;
+
+  linedot.style.left = `${leftcount}%`;
+
+  checkIcons();
+
+  if (leftcount >= 110) {
+    leftcount = -20;
+
+    // Reset all icons
+    hiw_icons.forEach((icon) => {
+      icon.classList.remove("active");
+    });
+  }
+
+  animationId = requestAnimationFrame(autolinefill);
+}
+
+autolinefill()
+
 
