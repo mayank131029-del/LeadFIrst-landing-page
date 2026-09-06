@@ -3797,7 +3797,7 @@
   .wa-features-list {
     display: flex;
     flex-direction: column;
-    gap: 24px;
+    gap: 28px;
   }
 
   .wa-feature-item {
@@ -3807,8 +3807,13 @@
   }
 
   .wa-icon {
-    font-size: 20px;
+    width: 50px;
+    /* font-size: 20px; */
     line-height: 1.2;
+  }
+
+  .wa-icon img{
+    width: 100%;
   }
 
   .wa-text h4 {
@@ -4061,9 +4066,13 @@
   }
 
   .pay-flow-icon {
+    width: 50px;
     font-size: 26px;
     margin-bottom: 16px;
   }
+  .pay-flow-icon img {
+    width: 100%;
+  } 
 
   .pay-flow-title {
     font-size: 14px;

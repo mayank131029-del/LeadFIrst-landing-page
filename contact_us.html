@@ -7,7 +7,6 @@
   <title>Contact Us - LeadFirst</title>
   <link rel="shortcut icon" href="assets/favicon.png" type="image/x-icon">
 
-  <!-- Google Fonts & Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
     integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,7 +22,7 @@
 
   <style>
     /* =========================================
-       GLOBAL VARIABLES & RESETS
+       GLOBAL VARIABLES & RESETS (UNTOUCHED)
     ========================================= */
     :root {
       --navy: #170F30;
@@ -39,7 +38,7 @@
       --line: #E6E7F5;
       --shadow-sm: 0 2px 10px rgba(43, 44, 90, 0.06);
       --shadow-md: 0 12px 32px rgba(79, 70, 229, 0.12);
-      --shadow-lg: 0 20px 50px rgba(23, 15, 48, 0.08);
+      --shadow-lg: 0 24px 60px rgba(79, 70, 229, 0.18);
       --radius-lg: 20px;
       --radius-md: 14px;
       --radius-sm: 10px;
@@ -59,7 +58,6 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Common Badge Style used across pages */
     .badge {
       display: inline-block;
       background-color: #EEF0FD;
@@ -72,30 +70,29 @@
       border: 1px solid var(--line);
     }
 
-
     /* =========================================
-       CONTACT US - NEW GRID LAYOUT
+       NEW MAIN SECTION: PREMIUM TWO-COLUMN
     ========================================= */
     .contact-section {
-      padding: 80px 5%;
+      padding: 80px 10%;
     }
 
     .contact-container {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    /* Top Row: Title & Socials */
-    .contact-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 50px;
-      gap: 30px;
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.1fr;
+      gap: 80px;
+      align-items: start;
     }
 
-    .header-text {
-      max-width: 600px;
+    /* Left Column: Text & Info */
+    .contact-info-col {
+      display: flex;
+      flex-direction: column;
     }
 
     .contact-title {
@@ -104,212 +101,201 @@
       color: var(--navy);
       letter-spacing: -0.5px;
       margin-bottom: 16px;
-      line-height: 1.1;
+      line-height: 1.2;
+    }
+
+    .highlight-violet {
+      color: var(--violet);
     }
 
     .contact-subtitle {
       font-size: 16px;
       color: var(--navy-soft);
       line-height: 1.6;
-    }
-
-    .header-socials {
-      display: flex;
-      gap: 12px;
-    }
-
-    .social-icon-btn {
-      width: 44px;
-      height: 44px;
-      background-color: var(--white);
-      border-radius: 8px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: var(--navy-soft);
-      font-size: 18px;
-      text-decoration: none;
-      box-shadow: var(--shadow-sm);
-      transition: all 0.3s ease;
-      border: 1px solid var(--line);
-    }
-
-    .social-icon-btn:hover {
-      background-color: var(--indigo);
-      color: var(--white);
-      border-color: var(--indigo);
-      transform: translateY(-2px);
-    }
-
-    /* Middle Row: Info Cards */
-    .contact-cards-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
       margin-bottom: 40px;
     }
 
-    .info-card {
+    .contact-details-list {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 20px;
+    }
+
+    .contact-item-icon {
+      width: 50px;
+      height: 50px;
       background-color: var(--white);
-      padding: 30px 24px;
-      border-radius: 12px;
-      box-shadow: var(--shadow-sm);
-      border-bottom: 4px solid var(--indigo);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .info-card:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-md);
-    }
-
-    .card-header {
+      color: var(--indigo);
+      border-radius: var(--radius-sm);
       display: flex;
       align-items: center;
-      gap: 12px;
-      margin-bottom: 16px;
+      justify-content: center;
+      font-size: 20px;
+      flex-shrink: 0;
+      box-shadow: var(--shadow-sm);
+      border: 1px solid var(--line);
     }
 
-    .card-header i {
-      color: var(--indigo);
-      font-size: 22px;
-    }
-
-    .card-header h4 {
-      font-size: 18px;
+    .contact-item-text h4 {
+      font-size: 16px;
       font-weight: 700;
       color: var(--navy);
+      margin-bottom: 6px;
     }
 
-    .info-card p,
-    .info-card a {
+    .contact-item-text p,
+    .contact-item-text address,
+    .contact-item-text a {
       font-size: 15px;
       color: var(--navy-soft);
-      line-height: 1.6;
+      line-height: 1.5;
+      font-style: normal;
       text-decoration: none;
+      transition: color 0.2s ease;
     }
 
-    .info-card a {
-      transition: color 0.2s;
-    }
-
-    .info-card a:hover {
+    .contact-item-text a:hover {
       color: var(--indigo);
     }
 
-    /* Bottom Row: Form Container */
-    .contact-form-container {
+    /* Right Column: Form Card */
+    .form-card {
       background-color: var(--white);
-      padding: 40px;
       border-radius: var(--radius-lg);
+      padding: 40px;
       box-shadow: var(--shadow-md);
+      border: 1px solid var(--line);
+    }
+
+    .form-title {
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--navy);
+      margin-bottom: 8px;
+    }
+
+    .form-desc {
+      font-size: 14px;
+      color: var(--navy-soft);
+      margin-bottom: 32px;
     }
 
     .contact-form {
       display: flex;
       flex-direction: column;
-      gap: 24px;
+      gap: 20px;
     }
 
     .form-row {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 24px;
+      gap: 20px;
+    }
+
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .form-group label {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--navy);
     }
 
     .form-group input,
+    .form-group select,
     .form-group textarea {
       width: 100%;
-      padding: 16px 20px;
-      border: 1px solid transparent;
-      border-radius: 10px;
+      padding: 12px 16px;
+      border: 1px solid #DDE2F5;
+      border-radius: 8px;
       font-family: inherit;
-      font-size: 15px;
+      font-size: 14px;
       color: var(--navy);
-      background-color: #F4F6FB;
-      transition: all 0.3s ease;
+      background-color: #FAFBFF;
+      transition: border-color 0.2s, box-shadow 0.2s;
     }
 
     .form-group input::placeholder,
     .form-group textarea::placeholder {
-      color: #8C98A4;
+      color: #94A3B8;
     }
 
     .form-group input:focus,
+    .form-group select:focus,
     .form-group textarea:focus {
       outline: none;
       border-color: var(--indigo);
-      box-shadow: 0 0 0 4px rgba(91, 79, 232, 0.1);
+      box-shadow: 0 0 0 3px rgba(91, 79, 232, 0.1);
       background-color: var(--white);
     }
 
     .form-group textarea {
       resize: vertical;
-      min-height: 160px;
-    }
-
-    .form-submit {
-      display: flex;
-      /* justify-content: flex-end; */
+      min-height: 120px;
     }
 
     .submit-btn {
       background-color: var(--indigo);
       color: var(--white);
       border: none;
-      padding: 16px 50px;
-      border-radius: 10px;
-      font-size: 16px;
+      padding: 16px 24px;
+      border-radius: 8px;
+      font-size: 15px;
       font-weight: 700;
       cursor: pointer;
-      transition: all 0.3s ease;
-      display: flex;
-      align-items: center;
-      gap: 10px;
+      transition: background-color 0.2s, transform 0.2s;
+      width: 100%;
+      margin-top: 8px;
     }
 
     .submit-btn:hover {
       background-color: var(--indigo-dark);
       transform: translateY(-2px);
-      box-shadow: 0 10px 20px rgba(91, 79, 232, 0.2);
     }
 
     /* =========================================
        RESPONSIVE BREAKPOINTS 
     ========================================= */
     @media (max-width: 992px) {
-      .contact-cards-row {
+      .contact-grid {
         grid-template-columns: 1fr;
+        gap: 60px;
       }
-
-      .contact-header-row {
-        flex-direction: column;
-        align-items: flex-start;
+      .contact-details-list {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .contact-item {
+        flex: 1 1 250px;
       }
     }
 
     @media (max-width: 768px) {
-
       .contact-section,
       .site-footer {
         padding: 60px 5%;
       }
-
       .contact-title {
         font-size: 36px;
       }
-
+      .form-card {
+        padding: 24px;
+      }
       .form-row {
         grid-template-columns: 1fr;
       }
-
-      .contact-form-container {
-        padding: 24px;
-      }
-
-      .submit-btn {
-        width: 100%;
-        justify-content: center;
+      .contact-details-list {
+        flex-direction: column;
       }
     }
   </style>
@@ -317,7 +303,6 @@
 
 <body>
 
-  <!-- Navigation Bar -->
   <header>
     <div class="nav-wrap">
       <a href="index.html" class="logo">
@@ -347,93 +332,113 @@
     </div>
   </header>
 
-  <!-- Main Contact Section -->
   <main class="contact-section">
     <div class="contact-container">
-
-      <!-- Top Row: Title & Socials -->
-      <div class="contact-header-row">
-        <div class="header-text">
-          <h1 class="contact-title">Get in Touch</h1>
-          <p class="contact-subtitle">For press inquiries, sponsorship opportunities, or general information regarding
-            our platform and services.</p>
-        </div>
-        <!-- <div class="header-socials">
-          <a href="#" class="social-icon-btn" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
-          <a href="#" class="social-icon-btn" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
-          <a href="#" class="social-icon-btn" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-          <a href="#" class="social-icon-btn" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
-        </div> -->
-      </div>
-
-      <!-- Middle Row: Cards -->
-      <div class="contact-cards-row">
-        <div class="info-card">
-          <div class="card-header">
-            <i class="fa-solid fa-location-dot"></i>
-            <h4>Headquarters</h4>
+      
+      <div class="contact-grid">
+        
+        <div class="contact-info-col">
+          <div>
+            <div class="badge">Contact Us</div>
+            <h1 class="contact-title">Let's start a <span class="highlight-violet">conversation</span></h1>
+            <p class="contact-subtitle">Have questions about LeadFirst? Whether you're a small business or a large agency, our team is ready to help you convert more leads.</p>
           </div>
-          <p>Block C, Tech Park, Sector 62<br>Noida, UP 201309, India</p>
-        </div>
 
-        <div class="info-card">
-          <div class="card-header">
-            <i class="fa-solid fa-phone"></i>
-            <h4>Phone</h4>
-          </div>
-          <p>+91 98765 43210</p>
-        </div>
-
-        <div class="info-card">
-          <div class="card-header">
-            <i class="fa-solid fa-envelope"></i>
-            <h4>Email</h4>
-          </div>
-          <a href="mailto:sales@leadfirst.in">sales@leadfirst.in</a>
-        </div>
-      </div>
-
-      <!-- Bottom Row: Form Container -->
-      <div class="contact-form-container">
-        <form action="#" method="POST" class="contact-form">
-
-          <div class="form-row">
-            <div class="form-group">
-              <input type="text" id="fullName" name="fullName" placeholder="Full Name" required>
+          <div class="contact-details-list">
+            
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fa-solid fa-envelope"></i>
+              </div>
+              <div class="contact-item-text">
+                <h4>Chat with Sales</h4>
+                <p>Speak to our friendly team.</p>
+                <a href="mailto:sales@leadfirst.in">sales@leadfirst.in</a>
+              </div>
             </div>
-            <div class="form-group">
-              <input type="email" id="email" name="email" placeholder="Email Address" required>
+
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fa-regular fa-comment-dots"></i>
+              </div>
+              <div class="contact-item-text">
+                <h4>Support & Help</h4>
+                <p>We're here to help with any technical issues.</p>
+                <a href="mailto:support@leadfirst.in">support@leadfirst.in</a>
+              </div>
             </div>
-          </div>
 
-          <div class="form-group">
-            <input type="text" id="subject" name="subject" placeholder="Subject" required>
-          </div>
+            <div class="contact-item">
+              <div class="contact-item-icon">
+                <i class="fa-solid fa-location-dot"></i>
+              </div>
+              <div class="contact-item-text">
+                <h4>Visit Us</h4>
+                <p>Drop by our office for a coffee.</p>
+                <address>
+                  Block C, Tech Park<br>
+                  Sector 62, Noida<br>
+                  UP 201309, India
+                </address>
+              </div>
+            </div>
 
-          <div class="form-group">
-            <textarea id="message" name="message" placeholder="Your Message" required></textarea>
           </div>
+        </div>
 
-          <div class="form-submit">
-            <button type="submit" class="submit-btn">
-              Send Message <i class="fa-solid fa-paper-plane"></i>
-            </button>
+        <div class="contact-form-col">
+          <div class="form-card">
+            <h3 class="form-title">Send us a message</h3>
+            <p class="form-desc">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+            <form action="#" method="POST" class="contact-form">
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="firstName">First Name</label>
+                  <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                </div>
+                <div class="form-group">
+                  <label for="lastName">Last Name</label>
+                  <input type="text" id="lastName" name="lastName" placeholder="Doe" required>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Work Email</label>
+                <input type="email" id="email" name="email" placeholder="john@company.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="subject">How can we help?</label>
+                <select id="subject" name="subject" required>
+                  <option value="" disabled selected>Select an option...</option>
+                  <option value="sales">Sales Inquiry</option>
+                  <option value="support">Technical Support</option>
+                  <option value="agency">Agency Partnership</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" placeholder="Tell us a bit about your needs..." required></textarea>
+              </div>
+
+              <button type="submit" class="submit-btn">Send Message</button>
+            </form>
           </div>
+        </div>
 
-        </form>
       </div>
-
+      
     </div>
   </main>
 
-  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="footer-container">
 
-      <!-- Top Section (Links & Brand) -->
       <div class="footer-top">
 
-        <!-- Column 1: Brand Info -->
         <div class="footer-brand-col">
           <a href="index.html" class="footer-logo">
             <img src="assets/logo white.png" alt="">
@@ -448,7 +453,6 @@
           </div>
         </div>
 
-        <!-- Column 5: Legal -->
         <div class="footer-link-col">
           <h4 class="footer-heading">Legal</h4>
           <ul class="footer-links">
@@ -465,10 +469,8 @@
         </div>
       </div>
 
-      <!-- Divider -->
       <hr class="footer-divider">
 
-      <!-- Bottom Section (Copyright) -->
       <div class="footer-bottom">
         <p class="copyright-text">© 2026 LeadFirst Technologies Pvt. Ltd. All rights reserved.</p>
         <p class="made-with-text">Made with <span class="heart"></span> in India</p>
@@ -476,7 +478,6 @@
 
     </div>
   </footer>
-  <!-- Back to Top Button -->
   <button id="backToTopBtn" class="back-to-top" aria-label="Scroll back to top">
     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
       stroke-linecap="round" stroke-linejoin="round">
