@@ -207,7 +207,7 @@
 
   /* ---------- HERO ---------- */
   .hero {
-    padding: 36px 0 40px;
+    padding: 50px 0 40px;
   }
 
   .hero-badge {
@@ -280,7 +280,7 @@
 
   .flow-card {
     border-radius: var(--radius-md);
-    padding: 14px 16px;
+    padding: 14px 24px;
   }
 
   .flow-card.website {
@@ -3685,8 +3685,8 @@
 
   .integration-card:not(.disabled-card):hover .integration-description {
      opacity: 1;
-    max-height: 100px;
-    margin-top: 10px;
+    /* max-height: 100px;
+    margin-top: 10px; */
   }
 
   .integration-icon {
@@ -3704,7 +3704,7 @@
     color: var(--navy-soft);
     line-height: 1.5;
 
-    opacity: 0;
+    /* opacity: 0;
     max-height: 0;
     overflow: hidden;
     margin: 0;
@@ -3712,7 +3712,7 @@
     transition:
         opacity 0.25s ease,
         max-height 0.3s ease,
-        margin 0.3s ease;
+        margin 0.3s ease; */
   }
 
 

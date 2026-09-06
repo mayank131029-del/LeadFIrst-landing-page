@@ -49,9 +49,6 @@
     flex-direction: row;
   }
 
-  .hero-flows .flow-card {
-    flex: 1;
-  }
 
   .stat-grid {
     grid-template-columns: 1fr 1fr;
