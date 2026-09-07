@@ -121,6 +121,7 @@
   }
 
   .btn {
+    transition: all 0.2s ease;
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -129,8 +130,9 @@
     border-radius: 12px;
     white-space: nowrap;
   }
-
+  
   .btn-primary {
+    transition: all 0.2s ease;
     background: var(--grad);
     color: #fff;
     padding: 11px 18px;
@@ -2865,12 +2867,15 @@
   }
 
   .comparison-box {
+    display: flex;
+    flex-direction: column;
     border-radius: var(--radius-lg);
     padding: 40px;
     box-shadow: var(--shadow-sm);
     transition: 0.2s all ease-in-out;
   }
-  .comparison-box:hover{
+
+  .comparison-box:hover {
     box-shadow: var(--shadow-md);
   }
 
@@ -2910,6 +2915,7 @@
   }
 
   .cards-grid {
+    flex: 2;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 16px;
@@ -2926,42 +2932,43 @@
     transition: 0.2s all ease-in-out;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
   }
-  .mini-card:hover{
+
+  .mini-card:hover {
     border-left: 3px solid #991B1B;
     transform: translateX(-5px);
   }
-  
+
   .card-icon {
     font-size: 20px;
   }
-  
+
   .card-text h4 {
     font-size: 13px;
     font-weight: 700;
     color: #991B1B;
     margin-bottom: 4px;
   }
-  
+
   .card-text p {
     font-size: 11px;
     font-weight: 600;
     color: #DC2626;
   }
-  
+
   /* -- After Box Styles -- */
   .after-box {
     background-color: rgba(59, 250, 91, 0.116);
     border: 2px solid rgba(59, 250, 91, 0.267);
   }
-  
+
   .green-bg {
     background-color: #DCFCE7;
   }
-  
+
   .green-text {
     color: var(--green);
   }
-  
+
   .hub-card {
     background-color: var(--white);
     transition: 0.2s all ease-in-out;
@@ -2969,9 +2976,10 @@
     border-radius: var(--radius-md);
     border-left: 3px solid rgba(255, 0, 0, 0);
     box-shadow: var(--shadow-sm);
-    margin-bottom: 30px;
+    /* margin-bottom: 30px; */
   }
-  .hub-card:hover{
+
+  .hub-card:hover {
     border-left: 3px solid var(--green);
     transform: translateX(-4px);
   }
@@ -2989,13 +2997,19 @@
     gap: 12px;
     margin-bottom: 30px;
   }
-  .badge-box{
+
+  .badge-box {
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    display: flex;
     padding: 5px 0;
   }
-  .badge-box .badge{
+
+  .badge-box .badge {
     color: var(--green);
     background-color: #F8FAFC;
-    margin: 0 5px;
+    margin: 0;
     /* display: flex; */
     gap: 2px;
   }
@@ -4059,40 +4073,29 @@
     width: 90%;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+    gap: 20px;
     margin-bottom: 60px;
-
-    /* Horizontal scroll for smaller screens to keep diagram linear */
-    overflow-x: auto;
     padding: 10px 0 20px;
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    /* Hide scrollbar Firefox */
-  }
+}
 
-  .payment-flow-wrapper::-webkit-scrollbar {
-    display: none;
-    /* Hide scrollbar Chrome/Safari */
-  }
+.pay-flow-card {
+    flex: 1 1 0;
+    min-width: 0;
 
-  .pay-flow-card {
     transition: 0.2s all ease;
     background-color: #F8FAFC;
-    /* Very light subtle blue-gray */
     border: 1px solid #E2E8F0;
-    /* Soft border matching the image */
     border-radius: var(--radius-md);
     padding: 24px 16px;
-    min-width: 225px;
-    flex: 0 0 auto;
-    /* Prevent shrinking on mobile */
+
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
-    /* Extremely soft shadow */
-  }
+}
 
   .pay-flow-card.active {
     box-shadow: var(--shadow-sm);
@@ -4206,7 +4209,7 @@
   .agency-cta-box {
     display: flex;
     justify-content: center;
-    padding: 25px 0;
+    padding: 55px 0 25px ;
   }
 
   .agency-cta-box a {
@@ -4215,8 +4218,12 @@
     transition: all 0.2s ease;
   }
 
-  .agency-cta-box a:hover {
+  .btn:hover {
     transform: translateY(-2px);
+  }
+  .pricing-btn:hover{
+    transform: translateY(-2px);
+
   }
 
   .agency-title {
@@ -4901,7 +4908,7 @@
     font-weight: 600;
     cursor: pointer;
     box-shadow: 0 4px 12px rgba(91, 79, 232, 0.2);
-    transition: background-color 0.2s;
+    /* transition: background-color 0.2s; */
   }
 
   .btn-primary:hover {
