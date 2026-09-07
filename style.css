@@ -2868,6 +2868,10 @@
     border-radius: var(--radius-lg);
     padding: 40px;
     box-shadow: var(--shadow-sm);
+    transition: 0.2s all ease-in-out;
+  }
+  .comparison-box:hover{
+    box-shadow: var(--shadow-md);
   }
 
   .box-header {
@@ -2912,65 +2916,88 @@
   }
 
   .mini-card {
+    border-left: 3px solid rgba(255, 0, 0, 0);
     background-color: var(--white);
     padding: 16px;
     border-radius: var(--radius-sm);
     display: flex;
     align-items: center;
     gap: 12px;
+    transition: 0.2s all ease-in-out;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.02);
   }
-
+  .mini-card:hover{
+    border-left: 3px solid #991B1B;
+    transform: translateX(-5px);
+  }
+  
   .card-icon {
     font-size: 20px;
   }
-
+  
   .card-text h4 {
     font-size: 13px;
     font-weight: 700;
     color: #991B1B;
     margin-bottom: 4px;
   }
-
+  
   .card-text p {
     font-size: 11px;
     font-weight: 600;
     color: #DC2626;
   }
-
+  
   /* -- After Box Styles -- */
   .after-box {
     background-color: rgba(59, 250, 91, 0.116);
     border: 2px solid rgba(59, 250, 91, 0.267);
   }
-
+  
   .green-bg {
     background-color: #DCFCE7;
   }
-
+  
   .green-text {
     color: var(--green);
   }
-
+  
   .hub-card {
     background-color: var(--white);
+    transition: 0.2s all ease-in-out;
     padding: 24px;
     border-radius: var(--radius-md);
+    border-left: 3px solid rgba(255, 0, 0, 0);
     box-shadow: var(--shadow-sm);
     margin-bottom: 30px;
+  }
+  .hub-card:hover{
+    border-left: 3px solid var(--green);
+    transform: translateX(-4px);
   }
 
   .hub-title {
     font-size: 15px;
     font-weight: 700;
     color: var(--navy);
-    margin-bottom: 20px;
+    margin-bottom: 15px;
   }
 
   .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 12px;
+    margin-bottom: 30px;
+  }
+  .badge-box{
+    padding: 5px 0;
+  }
+  .badge-box .badge{
+    color: var(--green);
+    background-color: #F8FAFC;
+    margin: 0 5px;
+    /* display: flex; */
+    gap: 2px;
   }
 
   .stat-box {
@@ -3684,7 +3711,7 @@
   }
 
   .integration-card:not(.disabled-card):hover .integration-description {
-     opacity: 1;
+    opacity: 1;
     /* max-height: 100px;
     margin-top: 10px; */
   }
@@ -3812,7 +3839,7 @@
     line-height: 1.2;
   }
 
-  .wa-icon img{
+  .wa-icon img {
     width: 100%;
   }
 
@@ -4029,6 +4056,7 @@
 
   /* --- Workflow Flowchart --- */
   .payment-flow-wrapper {
+    width: 90%;
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -4048,13 +4076,14 @@
   }
 
   .pay-flow-card {
+    transition: 0.2s all ease;
     background-color: #F8FAFC;
     /* Very light subtle blue-gray */
     border: 1px solid #E2E8F0;
     /* Soft border matching the image */
     border-radius: var(--radius-md);
     padding: 24px 16px;
-    min-width: 170px;
+    min-width: 225px;
     flex: 0 0 auto;
     /* Prevent shrinking on mobile */
     display: flex;
@@ -4065,14 +4094,21 @@
     /* Extremely soft shadow */
   }
 
+  .pay-flow-card.active {
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-5px);
+    border: 1px solid var(--campaign-color);
+  }
+
   .pay-flow-icon {
     width: 50px;
     font-size: 26px;
     margin-bottom: 16px;
   }
+
   .pay-flow-icon img {
     width: 100%;
-  } 
+  }
 
   .pay-flow-title {
     font-size: 14px;
@@ -4094,6 +4130,11 @@
     justify-content: center;
     flex: 0 0 auto;
     padding: 0 10px;
+  }
+
+  .pay-flow-arrow.active {
+    color: var(--campaign-color);
+
   }
 
   /* --- Stats Grid --- */
@@ -4161,18 +4202,20 @@
     /* max-width: 700px; */
     margin: 0 auto 50px;
   }
-  .agency-cta-box{
+
+  .agency-cta-box {
     display: flex;
     justify-content: center;
     padding: 25px 0;
   }
-  .agency-cta-box a{
+
+  .agency-cta-box a {
     font-size: 16px;
     padding: 15px 70px;
     transition: all 0.2s ease;
   }
 
-  .agency-cta-box a:hover{
+  .agency-cta-box a:hover {
     transform: translateY(-2px);
   }
 

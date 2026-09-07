@@ -149,3 +149,42 @@ function autolinefill() {
 autolinefill()
 
 
+
+let count = 0;
+
+
+const paycard = document.querySelectorAll(".pay-flow-card");
+
+
+function payflow() {
+
+  setTimeout(() => {
+
+    // If all cards have been shown
+    if (count >= paycard.length) {
+      paycard.forEach(item => {
+        item.classList.remove("active");
+      });
+
+      count = 0;
+
+      // Wait another second before activating card 1
+      payflow();
+      return;
+    }
+
+    if (count == 0) {
+      setTimeout
+    }
+
+    paycard[count].classList.add("active");
+
+    count++;
+
+    payflow();
+
+  }, 500);
+}
+
+payflow();
+

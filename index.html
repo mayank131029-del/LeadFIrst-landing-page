@@ -20,6 +20,205 @@
     <link rel="stylesheet" href="https://unpkg.com/lenis@1.3.25/dist/lenis.css">
     <script src="https://unpkg.com/lenis@1.3.25/dist/lenis.min.js"></script>
     <script>new Lenis({ autoRaf: true, autoToggle: true, anchors: true, allowNestedScroll: true, naiveDimensions: true, stopInertiaOnNavigate: true })</script>
+    <style>
+        .arch-diagram-wrapper {
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10px;
+            box-sizing: border-box;
+            background-color: #121212;
+            border-radius: 12px;
+            overflow-x: auto;
+        }
+
+        .arch-diagram-container {
+            position: relative;
+            width: 100%;
+            min-width: 600px;
+            /* Ensures readable scaling on small screens */
+            aspect-ratio: 1000 / 500;
+        }
+
+        /* SVG & Moving Dashes */
+        .arch-svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .arch-line {
+            fill: none;
+            stroke: #4A4A4A;
+            stroke-width: 14;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+        }
+
+        .arch-dash {
+            fill: none;
+            stroke: #ffffff;
+            stroke-width: 2;
+            stroke-dasharray: 6 6;
+            stroke-linecap: round;
+            stroke-linejoin: round;
+            opacity: 0.8;
+            animation: archDashMove 2s linear infinite;
+        }
+
+        @keyframes archDashMove {
+            from {
+                stroke-dashoffset: 24;
+            }
+
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        /* Nodes Styling */
+        .arch-node {
+            position: absolute;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ffffff;
+            color: #000000;
+            font-family: inherit;
+            transition: transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .arch-node:hover {
+            transform: scale(1.05);
+        }
+
+        .arch-card {
+            border-radius: 8px;
+            padding: 0.8% 1.5%;
+            font-size: clamp(9px, 1.3cqi, 13px);
+            font-weight: 600;
+            gap: 6px;
+        }
+
+        .arch-card svg {
+            width: clamp(12px, 1.8cqi, 18px);
+            height: clamp(12px, 1.8cqi, 18px);
+        }
+
+        .arch-feature {
+            border-radius: 12px;
+            width: 11%;
+            height: 14%;
+            flex-direction: column;
+            font-size: clamp(8px, 1.2cqi, 12px);
+            font-weight: 600;
+            gap: 4px;
+        }
+
+        .arch-feature svg {
+            width: clamp(14px, 2.2cqi, 22px);
+            height: clamp(14px, 2.2cqi, 22px);
+        }
+
+        .arch-circle {
+            border-radius: 50%;
+            width: 9%;
+            aspect-ratio: 1;
+            flex-direction: column;
+            font-size: clamp(9px, 1.3cqi, 13px);
+            font-weight: 700;
+            gap: 2px;
+        }
+
+        .arch-circle svg {
+            width: clamp(16px, 2.4cqi, 24px);
+            height: clamp(16px, 2.4cqi, 24px);
+        }
+
+        /* Central Rotating Hub Node */
+        .arch-hub {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 8%;
+            aspect-ratio: 1;
+            background: #ffffff;
+            border-radius: 50%;
+            z-index: 3;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+            animation: archRotateSequence 4s ease-in-out infinite;
+            transform-origin: center center;
+        }
+
+        /* Hub Dots */
+        .arch-dot {
+            position: absolute;
+            width: 10%;
+            height: 10%;
+            border-radius: 50%;
+            border: 1.5px solid #ffffff;
+        }
+
+        .dot-t {
+            top: -5%;
+            left: 45%;
+            background: #F97316;
+        }
+
+        .dot-b {
+            bottom: -5%;
+            left: 45%;
+            background: #F97316;
+        }
+
+        .dot-tl {
+            top: 20%;
+            left: -5%;
+            background: #9333EA;
+        }
+
+        .dot-bl {
+            bottom: 20%;
+            left: -5%;
+            background: #0052FF;
+        }
+
+        .dot-tr {
+            top: 20%;
+            right: -5%;
+            background: #0052FF;
+        }
+
+        .dot-br {
+            bottom: 20%;
+            right: -5%;
+            background: #9333EA;
+        }
+
+        /* Rotation Sequence Animation */
+        @keyframes archRotateSequence {
+            0% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            37.5% {
+                transform: translate(-50%, -50%) rotate(360deg);
+            }
+
+            75% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+
+            100% {
+                transform: translate(-50%, -50%) rotate(0deg);
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -316,6 +515,14 @@
                             <div class="stat-label">Conv. Rate</div>
                         </div>
                     </div>
+                    <h4 class="hub-title">Syncing Automatically From</h4>
+                    <div class="badge-box">
+                        <div class="badge">• Whatsapp</div>
+                        <div class="badge">• Email</div>
+                        <div class="badge">• Facebook Ads</div>
+                        <div class="badge">• Google Ads</div>
+                        <div class="badge">• Sheets & Drive</div>
+                    </div>
                 </div>
 
                 <!-- <ul class="feature-list">
@@ -431,7 +638,158 @@
             </div>
 
         </div> -->
-        <img class="solutiongif" src="assets/solution.gif" alt="">
+        <!-- <img class="solutiongif" src="assets/solution.gif" alt=""> -->
+
+
+        <div class="arch-diagram-wrapper">
+            <div class="arch-diagram-container">
+                <svg class="arch-svg" viewBox="0 0 1000 500" preserveAspectRatio="xMidYMid meet">
+                    <defs>
+                        <g id="arch-road-paths">
+                            <path d="M 120 100 L 250 100 L 250 250" class="arch-line" />
+                            <path d="M 120 250 L 250 250" class="arch-line" />
+                            <path d="M 120 390 L 250 390 L 250 250" class="arch-line" />
+
+                            <path d="M 250 250 L 500 250" class="arch-line" />
+
+                            <path d="M 375 105 L 375 180 L 470 180 L 470 250" class="arch-line" />
+                            <path d="M 625 105 L 625 180 L 530 180 L 530 250" class="arch-line" />
+                            <path d="M 375 395 L 375 320 L 470 320 L 470 250" class="arch-line" />
+                            <path d="M 625 395 L 625 320 L 530 320 L 530 250" class="arch-line" />
+
+                            <path d="M 500 250 L 750 250" class="arch-line" />
+
+                            <path d="M 750 250 L 750 100 L 880 100" class="arch-line" />
+                            <path d="M 750 250 L 880 250" class="arch-line" />
+                            <path d="M 750 250 L 750 390 L 880 390" class="arch-line" />
+                        </g>
+
+                        <g id="arch-dash-paths">
+                            <path d="M 120 100 L 250 100 L 250 250" class="arch-dash" />
+                            <path d="M 120 250 L 250 250" class="arch-dash" />
+                            <path d="M 120 390 L 250 390 L 250 250" class="arch-dash" />
+
+                            <path d="M 250 250 L 500 250" class="arch-dash" />
+
+                            <path d="M 375 105 L 375 180 L 470 180 L 470 250" class="arch-dash" />
+                            <path d="M 625 105 L 625 180 L 530 180 L 530 250" class="arch-dash" />
+                            <path d="M 375 395 L 375 320 L 470 320 L 470 250" class="arch-dash" />
+                            <path d="M 625 395 L 625 320 L 530 320 L 530 250" class="arch-dash" />
+
+                            <path d="M 500 250 L 750 250" class="arch-dash" />
+
+                            <path d="M 750 250 L 750 100 L 880 100" class="arch-dash" />
+                            <path d="M 750 250 L 880 250" class="arch-dash" />
+                            <path d="M 750 250 L 750 390 L 880 390" class="arch-dash" />
+                        </g>
+                    </defs>
+
+                    <use href="#arch-road-paths" />
+                    <use href="#arch-dash-paths" />
+                </svg>
+
+                <div class="arch-node arch-card" style="top: 16%; left: 3%;">
+                    <svg viewBox="0 0 24 24" fill="#FF8A00">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                    <span>User 1</span>
+                </div>
+                <div class="arch-node arch-card" style="top: 45%; left: 3%;">
+                    <svg viewBox="0 0 24 24" fill="#9333EA">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                    <span>User 2</span>
+                </div>
+                <div class="arch-node arch-card" style="top: 74%; left: 3%;">
+                    <svg viewBox="0 0 24 24" fill="#EF4444">
+                        <path
+                            d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" />
+                    </svg>
+                    <span>User 3</span>
+                </div>
+
+                <div class="arch-node arch-circle" style="top: 41%; left: 20.5%;">
+                    <svg viewBox="0 0 24 24" fill="#0052FF">
+                        <path
+                            d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2zm-5-2c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zM9 4c.55 0 1 .45 1 1s-.45 1-1 1-1-.45-1-1 .45-1 1-1zm11 15H4v-2h16v2zm0-5H4V8h5.08L7 10.83l1.41 1.41L12 8.66l3.59 3.58L17 10.83 14.92 8H20v6z" />
+                    </svg>
+                    <span>Rewards</span>
+                </div>
+
+                <div class="arch-node arch-feature" style="top: 7%; left: 32%;">
+                    <svg viewBox="0 0 24 24" fill="#0052FF">
+                        <path
+                            d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4zm-2 16l-4-4 1.41-1.41L10 14.17l6.59-6.59L18 9l-8 8z" />
+                    </svg>
+                    <span>Authentication</span>
+                </div>
+
+                <div class="arch-node arch-feature" style="top: 7%; right: 32%;">
+                    <svg viewBox="0 0 24 24" fill="#0052FF">
+                        <path
+                            d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zm-5 14H7v-2h7v2zm3-4H7v-2h10v2zm0-4H7V7h10v2z" />
+                    </svg>
+                    <span>Warranties</span>
+                </div>
+
+                <div class="arch-node arch-feature" style="bottom: 7%; left: 32%;">
+                    <svg viewBox="0 0 24 24" fill="#0052FF">
+                        <path
+                            d="M20 6h-2.18c.11-.31.18-.65.18-1 0-1.66-1.34-3-3-3-1.05 0-1.96.54-2.5 1.35l-.5.67-.5-.68C10.96 2.54 10.05 2 9 2 7.34 2 6 3.34 6 5c0 .35.07.69.18 1H4c-1.11 0-1.99.89-1.99 2L2 19c0 1.11.89 2 2 2h16c1.11 0 2-.89 2-2V8c0-1.11-.89-2-2-2z" />
+                    </svg>
+                    <span>Rewards</span>
+                </div>
+
+                <div class="arch-node arch-feature" style="bottom: 7%; right: 32%;">
+                    <svg viewBox="0 0 24 24" fill="#0052FF">
+                        <path
+                            d="M18 11v2h4v-2h-4zm-2 6.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.39-.4.53-.8 1.07-1.2 1.6zm1.2-12.82c-.4-.53-.8-1.07-1.2-1.6-.96.71-2.21 1.65-3.2 2.39.4.53.8 1.07 1.2 1.6.99-.74 2.24-1.68 3.2-2.39zM15.5 12c0-1.33-.58-2.53-1.5-3.35V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-3.65c.92-.82 1.5-2.02 1.5-3.35z" />
+                    </svg>
+                    <span>Marketing</span>
+                </div>
+
+                <div class="arch-hub">
+                    <div class="arch-dot dot-t"></div>
+                    <div class="arch-dot dot-b"></div>
+                    <div class="arch-dot dot-tl"></div>
+                    <div class="arch-dot dot-bl"></div>
+                    <div class="arch-dot dot-tr"></div>
+                    <div class="arch-dot dot-br"></div>
+                </div>
+
+                <div class="arch-node arch-circle" style="top: 41%; right: 20.5%;">
+                    <svg viewBox="0 0 24 24" fill="#0052FF">
+                        <path
+                            d="M18 11v2h4v-2h-4zm-2 6.61c.96.71 2.21 1.65 3.2 2.39.4-.53.8-1.07 1.2-1.6-.99-.74-2.24-1.68-3.2-2.39-.4.53-.8 1.07-1.2 1.6zm1.2-12.82c-.4-.53-.8-1.07-1.2-1.6-.96.71-2.21 1.65-3.2 2.39.4.53.8 1.07 1.2 1.6.99-.74 2.24-1.68 3.2-2.39zM15.5 12c0-1.33-.58-2.53-1.5-3.35V5c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h8c1.1 0 2-.9 2-2v-3.65c.92-.82 1.5-2.02 1.5-3.35z" />
+                    </svg>
+                    <span>Marketing</span>
+                </div>
+
+                <div class="arch-node arch-card" style="top: 16%; right: 3%;">
+                    <span>Business 1</span>
+                    <svg viewBox="0 0 24 24" fill="#F97316">
+                        <path
+                            d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" />
+                    </svg>
+                </div>
+                <div class="arch-node arch-card" style="top: 45%; right: 3%;">
+                    <span>Business 2</span>
+                    <svg viewBox="0 0 24 24" fill="#A855F7">
+                        <path
+                            d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" />
+                    </svg>
+                </div>
+                <div class="arch-node arch-card" style="top: 74%; right: 3%;">
+                    <span>Business 3</span>
+                    <svg viewBox="0 0 24 24" fill="#E11D48">
+                        <path
+                            d="M12 7V3H2v18h20V7H12zM6 19H4v-2h2v2zm0-4H4v-2h2v2zm0-4H4V9h2v2zm0-4H4V5h2v2zm4 12H8v-2h2v2zm0-4H8v-2h2v2zm0-4H8V9h2v2zm0-4H8V5h2v2zm10 12h-8v-2h2v-2h-2v-2h2v-2h-2V9h8v10zm-2-8h-2v2h2v-2zm0 4h-2v2h2v-2z" />
+                    </svg>
+                </div>
+            </div>
+        </div>
     </section>
 
 
@@ -822,11 +1180,11 @@
                     <span class="integration-description">Capture Contact Form 7 submissions without changing your
                         workflow.</span>
                 </div>
-                <div class="integration-card">
+                <!-- <div class="integration-card">
                     <img src="assets/php.png" alt="">
                     <span class="integration-name">PHP Forms</span>
                     <span class="integration-description">Capture leads from any custom-built website form.</span>
-                </div>
+                </div> -->
                 <div class="integration-card">
                     <img src="assets/whatsapp.png" alt="">
                     <span class="integration-name">WhatsApp</span>
@@ -878,11 +1236,6 @@
                     <span class="integration-description">Sync Leadfirst leads with your HubSpot CRM.</span>
                 </div>
                 <div class="integration-card">
-                    <img src="assets/salesforce.png" alt="">
-                    <span class="integration-name">Salesforce</span>
-                    <span class="integration-description">Send new leads directly into your Salesforce pipeline.</span>
-                </div>
-                <div class="integration-card">
                     <img src="assets/email.png" alt="">
                     <span class="integration-name">Email</span>
                     <span class="integration-description">Get instant lead notifications directly in your inbox.</span>
@@ -892,10 +1245,11 @@
                     <span class="integration-name">SMS</span>
                     <span class="integration-description">Send instant SMS alerts when a new lead arrives.</span>
                 </div>
-                <div class="integration-card disabled-card">
-                    <span class="soon-pill">Soon</span>
-                    <img src="assets/meta.png" alt="">
-                    <span class="integration-name">Zapier</span>
+                <div class="integration-card">
+                    <!-- <span class="soon-pill">Soon</span> -->
+                    <!-- <img src="assets/meta.png" alt=""> -->
+                    <span class="integration-name">More Coming Soon +</span>
+                    <!-- <span class="integration-description">Coming Soon</span> -->
                 </div>
 
             </div>
