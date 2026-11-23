@@ -1,8 +1,3 @@
-window.addEventListener("resize", () => {
-
-  document.title = window.innerWidth
-})
-
 document.addEventListener('DOMContentLoaded', () => {
   const faqQuestions = document.querySelectorAll('.faq-question');
 
