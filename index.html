@@ -272,6 +272,78 @@
         }
 
     </style>
+
+    <style id="leadfirst-entrance-motion">
+        :root {
+            --lf-motion-ease: cubic-bezier(.22, 1, .36, 1);
+            --lf-motion-duration: 780ms;
+        }
+
+        /* Applied by the animation script without replacing existing classes */
+        .lf-reveal {
+            opacity: 0;
+            transform: translate3d(0, 24px, 0);
+            transition:
+                opacity var(--lf-motion-duration) var(--lf-motion-ease),
+                transform var(--lf-motion-duration) var(--lf-motion-ease);
+            transition-delay: var(--lf-reveal-delay, 0ms);
+            will-change: opacity, transform;
+        }
+
+        .lf-reveal.lf-is-visible {
+            opacity: 1;
+            transform: translate3d(0, 0, 0);
+        }
+
+        /* Hero gets a slightly more deliberate, staggered first impression */
+        .lf-hero-reveal {
+            opacity: 0;
+            transform: translate3d(0, 22px, 0);
+            animation: lfHeroEnter 850ms var(--lf-motion-ease) forwards;
+            animation-delay: var(--lf-hero-delay, 0ms);
+        }
+
+        .lf-hero-visual {
+            opacity: 0;
+            transform: translate3d(22px, 12px, 0) scale(.985);
+            animation: lfHeroVisualEnter 1000ms var(--lf-motion-ease) forwards;
+            animation-delay: 220ms;
+        }
+
+        .lf-reveal.lf-is-visible .feature-icon-wrapper,
+        .lf-reveal.lf-is-visible .icon-circle {
+            animation: lfDetailPop 520ms var(--lf-motion-ease) both;
+            animation-delay: 120ms;
+        }
+
+        @keyframes lfHeroEnter {
+            to { opacity: 1; transform: translate3d(0, 0, 0); }
+        }
+
+        @keyframes lfHeroVisualEnter {
+            to { opacity: 1; transform: translate3d(0, 0, 0) scale(1); }
+        }
+
+        @keyframes lfDetailPop {
+            0% { transform: scale(.92); }
+            65% { transform: scale(1.035); }
+            100% { transform: scale(1); }
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .lf-reveal,
+            .lf-reveal.lf-is-visible,
+            .lf-hero-reveal,
+            .lf-hero-visual {
+                opacity: 1 !important;
+                transform: none !important;
+                animation: none !important;
+                transition: none !important;
+                will-change: auto;
+            }
+        }
+    </style>
+
 </head>
 
 <body>
@@ -2449,6 +2521,86 @@
             <path d="M12 19V5M5 12l7-7 7 7" />
         </svg>
     </button>
+
+<script id="leadfirst-entrance-script">
+(() => {
+    const initLeadFirstEntrance = () => {
+        const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        const hero = document.querySelector('.about-hero');
+
+        if (reduceMotion) return;
+
+        /* Keep the original classes untouched; add motion classes as extras. */
+        if (hero) {
+            const heroItems = [
+                hero.querySelector('.badge'),
+                hero.querySelector('.hero-title'),
+                hero.querySelector('.hero-subtitle')
+            ].filter(Boolean);
+
+            heroItems.forEach((element, index) => {
+                element.classList.add('lf-hero-reveal');
+                element.style.setProperty('--lf-hero-delay', `${100 + index * 115}ms`);
+            });
+        }
+
+        /* Reveal major sections and their meaningful content as they enter view. */
+        const revealSelectors = [
+            '.story-content',
+            '.story-image-wrapper',
+            '.values-header',
+            '.value-card',
+            '.cta-section',
+            '.cta-content',
+            '.site-footer .footer-top',
+            '.site-footer .footer-bottom'
+        ];
+
+        const revealElements = [...new Set(
+            revealSelectors.flatMap(selector => Array.from(document.querySelectorAll(selector)))
+        )];
+
+        /* Fallback for sections not covered by a component-specific selector. */
+        document.querySelectorAll('body > section, main > section').forEach(section => {
+            if (!section.matches('.about-hero')) revealElements.push(section);
+        });
+
+        const uniqueElements = [...new Set(revealElements)];
+        uniqueElements.forEach((element) => {
+            if (element.closest('.about-hero')) return;
+            element.classList.add('lf-reveal');
+            /* A subtle stagger for sibling cards; avoids making long pages feel slow. */
+            const siblings = element.parentElement
+                ? Array.from(element.parentElement.children).filter(child => child.classList.contains('lf-reveal'))
+                : [];
+            const siblingIndex = Math.max(0, siblings.indexOf(element));
+            element.style.setProperty('--lf-reveal-delay', `${Math.min(siblingIndex * 75, 300)}ms`);
+        });
+
+        const observer = new IntersectionObserver((entries, currentObserver) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+                entry.target.classList.add('lf-is-visible');
+                currentObserver.unobserve(entry.target);
+            });
+        }, {
+            threshold: 0.12,
+            rootMargin: '0px 0px -45px 0px'
+        });
+
+        uniqueElements.forEach(element => {
+            if (!element.closest('.about-hero')) observer.observe(element);
+        });
+    };
+
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initLeadFirstEntrance, { once: true });
+    } else {
+        initLeadFirstEntrance();
+    }
+})();
+</script>
+
 </body>
 <script src="script.js"></script>
 
