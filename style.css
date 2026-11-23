@@ -510,9 +510,7 @@
     flex: 1;
   }
 
-  .ls-item+.ls-item {
-    margin-left: 14px;
-  }
+ 
 
   .ls-item .top {
     display: flex;

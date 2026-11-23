@@ -741,3 +741,238 @@
     height: 20px;
   }
 }
+
+/* ===== Tablet & Mobile (<= 768px) ===== */
+@media (max-width: 768px) {
+  .dash-mock {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 12px;
+    overflow: hidden;
+  }
+
+  /* Topbar: prevent URL overflow */
+  .dash-topbar {
+    padding: 10px 12px;
+    gap: 10px;
+  }
+
+  .dash-topbar .url {
+    font-size: 11px;
+    padding: 4px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    min-width: 0;
+  }
+
+  /* Stack sidebar above content */
+  .dash-inner {
+    flex-direction: column;
+  }
+
+  /* Convert vertical sidebar into horizontal icon bar */
+  .dash-sidebar {
+    width: 100%;
+    height: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 12px;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* adjust color to match your theme */
+    overflow-x: auto;
+    gap: 6px;
+  }
+
+  .dash-sidebar .si {
+    width: 34px;
+    height: 34px;
+    flex-shrink: 0;
+  }
+
+  .dash-sidebar .si svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  /* Main content spacing */
+  .dash-content {
+    padding: 16px;
+    min-width: 0;
+  }
+
+  .dash-content-head {
+    margin-bottom: 14px;
+    gap: 8px;
+  }
+
+  .dash-content-head h3 {
+    font-size: 16px;
+  }
+
+  /* 2x2 grid for stats */
+  .stat-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .stat-box {
+    padding: 12px;
+    min-width: 0;
+  }
+
+  .stat-box .lbl {
+    font-size: 11px;
+  }
+
+  .stat-box .row {
+    gap: 6px;
+    align-items: center;
+  }
+
+  .stat-box .val {
+    font-size: 18px;
+  }
+
+  .stat-box .spark {
+    width: 44px;
+    height: 18px;
+    flex-shrink: 0;
+  }
+
+  .stat-box .delta {
+    font-size: 11px;
+  }
+
+  /* Stack lead source bars vertically */
+  .lead-sources {
+    margin-top: 14px;
+    padding: 14px;
+  }
+
+  .lead-sources h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+
+  .ls-row {
+    flex-direction: column;
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .ls-item {
+    width: 100%;
+  }
+
+  .ls-item .top {
+    font-size: 12px;
+  }
+}
+
+/* ===== Small Phones (<= 480px) ===== */
+@media (max-width: 480px) {
+  .dash-content {
+    padding: 12px;
+  }
+
+  /* Single column so values and sparklines never collide */
+  .stat-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .stat-box .val {
+    font-size: 20px;
+  }
+
+  .stat-box .spark {
+    width: 56px;
+    height: 22px;
+  }
+
+  .dash-topbar .dots span {
+    width: 8px;
+    height: 8px;
+  }
+}
+
+/* ===== Tablet & Mobile (<= 768px) ===== */
+@media (max-width: 768px) {
+  .payment-flow-wrapper {
+    width: 100%;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 36px;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .pay-flow-card {
+    flex: none;
+    width: 100%;
+    max-width: 400px;
+    padding: 18px 16px;
+    box-sizing: border-box;
+  }
+
+  .pay-flow-icon {
+    width: 42px;
+    margin-bottom: 10px;
+  }
+
+  .pay-flow-title {
+    font-size: 15px;
+  }
+
+  .pay-flow-desc {
+    font-size: 12px;
+  }
+
+  /* Rotate horizontal arrows to point downward */
+  .pay-flow-arrow {
+    padding: 4px 0;
+  }
+
+  .pay-flow-arrow i {
+    transform: rotate(90deg);
+    display: inline-block;
+  }
+
+  /* Stats Grid: 2x2 on mobile */
+  .payment-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+    padding: 0 12px;
+    box-sizing: border-box;
+  }
+
+  .pay-stat-card {
+    padding: 16px;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  .pay-stat-value {
+    font-size: 18px;
+  }
+
+  .pay-stat-label,
+  .pay-stat-sub {
+    font-size: 11px;
+  }
+}
+
+/* ===== Small Phones (<= 420px) ===== */
+@media (max-width: 420px) {
+  /* Single column so long stat values never crop */
+  .payment-stats-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .pay-stat-value {
+    font-size: 20px;
+  }
+}
